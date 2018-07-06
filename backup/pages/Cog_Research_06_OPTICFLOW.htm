@@ -1,0 +1,182 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-style-type" content="text/css" />
+<link href="./../css/publish.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/common.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Biological Cybernetics Lab</title>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+
+<div id="Contents" class="Contents_Right">
+	
+<P><SPAN style="COLOR: black; FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif;"><B><I><font size="4" face="Helvetica" color="#191919">- Optic Flow<br>
+</font></I></B></SPAN><font color="#333333"></font><B><I><span style="FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:black;"></span></I></B></P>
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">WHAT IS OPTIC FLOW?</font></span></i><font color="#333333"></font></P>
+<P><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Optical flow or optic flow is the pattern of apparetn motion of objects, surfaces, and edges in a visual scene caused by the relative motion between an observer and the scene. Optical flow techniques such as motion detection, object segmentation, time-to-collision and focus of expansion calculations, motion compensated encoding, and stereo disparity measurement utilized this motion of the objects surfaces, and edges.</font><font color="#333333"></font></P>
+<p align="center"><font face="Helvetica" color="#333333">&nbsp;<img src="./../Images/Research/OPTICFLOW/Opticflow_1.png" width="600" height="200" border="0"><br>
+</font><a href="http://en.wikipedia.org/wiki/Optical_flow"><i><font size="2" face="Adobe Caslon Pro" color="#333333">http://en.wikipedia.org/wiki/Optical_flow</font></i></a></p>
+<p align="center"><font color="#333333">&nbsp;</font></p>
+<p>
+<span style="font-size:13pt;">
+<font face="Helvetica Black" color="#333333"><b><i>ESTIMATION OF THE OPTIAL FLOW</i></b></font>
+</span>
+</p>
+<p>
+<font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Sequences of ordered Images allow the estimation of motion as either instantaneous image velocities or discrete image displacements.<br>
+ &nbsp;&nbsp;&nbsp;The optical flow methods try to calculate the motion between two image frames which are taken at times t and t + δt at every voxel position. These methods are called differential since they are based on local Taylor series approximations of the image signal; that is, they use partial derivatives with respect to the spatial and temporal coordinates.<br>
+For a 2D+t dimensional case (3D or n-D cases are similar) a voxel at location (x,y,t) with intensity I(x,y,t) will have moved by δx, δy and δt between the two image frames, and the following image constraint equation can be given:</font>
+</p>
+<p align="left">
+<font face="Helvetica Narrow" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<SPAN class=texhtml>
+<I><font face="Helvetica Narrow" color="#333333">I</font></I>
+<font face="Helvetica Narrow" color="#333333">(<I>x</I>,<I>y</I>,<I>t</I>) = <I>I</I>(<I>x</I> + δ<I>x</I>,<I>y</I> + δ<I>y</I>,<I>t</I> + δ<I>t</I>)<br></font>
+<font face="Helvetica" color="#333333"> &nbsp;&nbsp;&nbsp;Assuming the movement to be small, the image constraint at I(x,y,t) with Talor series can be developed to get</font>
+<font face="Helvetica Narrow" color="#333333"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+</SPAN>
+<span style="font-size:10pt;">
+<font color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn1438.gif" border="0">
+<!--NAMO_EQN__ 160 1I(x+\delta x,y+\delta y,t+\delta t)=I(x,y,t)+\frac{\partial I}{\partial x}\delta x+\frac{\partial I}{\partial y}\delta y+\frac{\partial I}{\partial t}\delta t+H.O.T-->
+<br>
+</font>
+</span>
+
+<SPAN class=texhtml>
+<font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;where H.O.T mean higer order terms, which are small enough to be ignored. From these equations it follow that:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_eqn19054.gif" border="0"><br>
+<!--NAMO_EQN__ 160 1\frac{\partial I}{\partial x}\delta x+\frac{\partial I}{\partial y}\delta y+\frac{\partial I}{\partial t}\delta t=0-->
+</font>
+</SPAN>
+
+<font face="Helvetica" color="#333333">or</font>
+<SPAN class=texhtml>
+<font face="Helvetica" color="#333333"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn2785.gif" border="0">&nbsp;<br>
+<!--NAMO_EQN__ 160 1\frac{\partial I}{\partial x}\frac{\delta x}{\delta t}+\frac{\partial I}{\partial y}\frac{\delta y}{\delta t}+\frac{\partial I}{\partial t}\frac{\delta t}{\delta t}=0-->
+which results in <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn3121.gif" border="0">&nbsp;<br>
+<!--NAMO_EQN__ 160 1\frac{\partial I}{\partial x}V_{x}+\frac{\partial I}{\partial y}V_{y}+\frac{\partial I}{\partial t}=0-->
+&nbsp;&nbsp;&nbsp;where Vx, Vy are the x and y components of the velocity or optical flow of I(x,y,t) and </font></SPAN>
+<font color="#333333">
+<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn3608.gif" border="0">
+<!--NAMO_EQN__ 160 1\frac{\partial I}{\partial x},\frac{\partial I}{\partial y}-->
+</font><font face="Helvetica" color="#333333"> and <img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn3711.gif" border="0">
+<!--NAMO_EQN__ 160 1\frac{\partial I}{\partial t}-->
+ are the derivatives of the image at (x,y,t) in the correspoing directions I</font><font size="1" face="Helvetica" color="#333333">x</font><font face="Helvetica" color="#333333">,I</font><font size="1" face="Helvetica" color="#333333">y</font><font face="Helvetica" color="#333333"> and I</font><font size="1" face="Helvetica" color="#333333">t </font><font face="Helvetica" color="#333333">can be wirtten for the drivatives in the following<br>
+ &nbsp;&nbsp;&nbsp;Thus<br>
+</font><font face="Helvetica Narrow" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><SPAN class=texhtml><I><font face="Helvetica Narrow" color="#333333">I</font></I><SUB><I><font face="Helvetica Narrow" color="#333333">x</font></I></SUB><I><font face="Helvetica Narrow" color="#333333">V</font></I><SUB><I><font face="Helvetica Narrow" color="#333333">x</font></I></SUB><font face="Helvetica Narrow" color="#333333"> + 
+<I>I</I><SUB><I>y</I></SUB><I>V</I><SUB><I>y</I></SUB> = </font><I><font face="Helvetica Narrow" color="#333333">- I</font></I><SUB><I><font face="Helvetica Narrow" color="#333333">t</font></I></SUB></SPAN><font face="Helvetica Narrow" color="#333333"> <br>
+</font><font face="Helvetica" color="#333333"> &nbsp;&nbsp;&nbsp;This is an equation in two unknowns and cannot be solved as such. This is known as the aperture proble of the optical flow algorithm. </font><font color="#333333"></font></p>
+<br>
+<p>
+<span style="font-size:13pt;">
+<font face="Helvetica Black" color="#333333"><b><i>OPTIC FLOW APPLICATION(MATLAB)</b></i></font></span>
+</p>
+<p><font face="Helvetica" color="#333333">◆Obstacle Avoidance </font></p>
+<p><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;In robotics, obstacle avoidance is the task of satisfying some control objective subject to onon-intersection or noncollision position constraints. To avoid arbitrary obstacles in an unknown environoment, the accrutate sensingis required. Normally the sonar, light or tactile sensor is used for localization. Sonar ranging is one of the most common forms of distance measurement used in mobile robots and a variety of applications. Although Sonar ranging sensor is most used method, I suggest a new method for obstacle avoidance based on optic flow method. The picture below shows successive process of finding a direction to avoid obstacles. Figure1 (A) displays optical flow arrows when a mobile robot heads toward obstacles. The arrow lean towrad the direction awya from the robot.</font><font color="#333333"></font></p>
+<P align="center"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Opticflow_2.JPG" width="311" height="258" border="0"><br>
+</font><font face="Helvetica Black" color="#333333">Figure1</font><font color="#333333"></font></P>
+<p><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Technically, optical flow is being generated based on a grid; a series of optic flow, so to speak, is on the same horizontal line. Picture (B), horizontal arrow represent </font><font color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn8632.gif" border="0">
+<!--NAMO_EQN__ 160 1\overrightarrow{x}-->
+</font><font face="Helvetica" color="#333333"> components; the closer the object is, the larger the magnitude of optic flow arrow is. As shown in Figure below, normally, the optic flows are randomly distributed on a horizontal line: right direction compoments(<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn9074.gif" border="0">
+<!--NAMO_EQN__ 160 1\overrightarrow{v_{n}}-->
+) and left direction components (<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn9140.gif" border="0">
+<!--NAMO_EQN__ 160 1\overrightarrow{u_{n}}-->
+). In order to rearrange and resize thses components, equatino (1) proposes simple method.</font><font color="#333333"></font></p>
+<p align="center"><font face="Helvetica Black" color="#333333"><img src="./../Images/Research/OPTICFLOW/Opticflow_3.JPG" width="400" height="221" border="0"><br>
+Figure2</font><font color="#333333"></font></p>
+<p align="center"><font face="Helvetica Narrow" color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn9373.gif" border="0">
+<!--NAMO_EQN__ 160 1\alpha =\frac{\sum \left|\overrightarrow{v_{i}}\right|}{\sum \left|\overrightarrow{v_{i}}\right|+\left|\overrightarrow{u_{i}}\right|}-->
+ , &nbsp;<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn9667.gif" border="0">
+<!--NAMO_EQN__ 160 1\beta =\frac{\sum \left|\overrightarrow{u_{i}}\right|}{\sum \left|\overrightarrow{v_{i}}\right|+\left|\overrightarrow{u_{i}}\right|}-->
+..........(1)</font><font color="#333333"></font></p>
+<p align="left"><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;The point P represents the proportional point which each <img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10161.gif" border="0">
+<!--NAMO_EQN__ 160 1\alpha -->
+and <img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10188.gif" border="0">
+<!--NAMO_EQN__ 160 1\beta -->
+&nbsp;occupies. In Figure 2(B), the size of <img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10270.gif" border="0">
+<!--NAMO_EQN__ 160 1\alpha -->
+is bigger than the size of <img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10315.gif" border="0">
+<!--NAMO_EQN__ 160 1\beta -->
+&nbsp;. This means the obstacle at the right side is closer than the left one. Thus, the line from the origin to the point P, in Figure 2(C), has angular deviation </font><font color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10535.gif" border="0">
+<!--NAMO_EQN__ 160 1\theta -->
+</font>
+<font face="Helvetica" color="#333333"> to the left. The angle </font>
+<font color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10590.gif" border="0">
+<!--NAMO_EQN__ 160 1\theta -->
+</font>
+<font face="Helvetica" color="#333333"> can be found for every single horizontal line in the grid. The mean value of the angle </font>
+<font color="#333333"><img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn10676.gif" border="0">
+<!--NAMO_EQN__ 160 1\theta -->
+</font>
+<font face="Helvetica" color="#333333">, in Figure1(D), represents the final vector the robot has to head towards.</font>
+<font color="#333333"></font>
+</p>
+ 
+<p align="center">
+<font color="#333333"><img src="./../Images/Research/OPTICFLOW/Opticflow_4.gif" width="387" height="292" border="0"><br>
+</font>
+<font face="Helvetica Black" color="#333333">Figure3</font>
+</p>
+
+<p align="left"><font face="Helvetica" color="#333333">◆Rotating Angle</font></p>
+<p align="left"><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Unlike wheel based mobile robots, the posture control is needed for legged robots. Crab's eyes set the orientation to the equator line in their territorial field. Crab's special visual system may have influences on the stabillization of the robot body. <br>
+ &nbsp;&nbsp;&nbsp;Here, I propose that the stabilizatioin control problem can be solved using optical flow. Although the posture control is being limited to the 2-dimension space, this method is simple and effective. </font><font color="#333333"></font></p>
+<p align="center">
+<font color="#333333"><img src="./../Images/Research/OPTICFLOW/Opticflow_5.JPG" width="304" height="243" border="0"><br>&nbsp;</font>
+<font face="Helvetica Black" color="#333333">Figure4</font>
+</p>
+<p align="left">
+<font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;As shown in Figure4(B), the camera on the mobile robot is tilted due to the motion of the robot. The optical flow arrows always lean towards the opposite direction of the viewer's progression direction. The scene in the pircure is rotated counterclockwise, and the optical flow&nbsp;arrows head clockwise. The optic flow method is based on the pixel movements. Consequently, the pixels, away from the center of the rotation, make more movements than those pixels close to the center. Since The pixel movement makes optic flows, large pixel movement makes big magnitude of optic flow. In the same manner, in Figure 4(B), optic flow arrows away from center are bigger than the centerd one. In order to calculate the angle of the optic flow, in Figure 4(C), each optical flow arrow is divided into (x,y) vector components. The angle of each optic flow is based on the horizontal line in the picture. The angle can be calculated from equation(2).</font></p>
+<p align="center">
+<font color="#333333">
+<img NAMO_EQN__ src="./../Images/Research/OPTICFLOW/optical flow_htm_opticflow_htm_eqn15311.gif" border="0">
+<!--NAMO_EQN__ 160 1\theta =tan^{-1}\frac{\overrightarrow{y}_{i}}{\overrightarrow{x}_{i}}-->
+</font>
+<font face="Helvetica Narrow" color="#333333">.................(2)</font>
+</p>
+<p align="center">
+<font color="#333333">
+<img src="./../Images/Research/OPTICFLOW/Opticflow_6.JPG" width="319" height="357" border="0"><br>
+&nbsp;</font>
+<font face="Helvetica Black" color="#333333">Figure5</font></p>
+<p align="left"><i><span style="font-size:13pt;">
+<font face="Helvetica Black" color="#333333"><b>TEST</b></font></span></i></p>
+<p align="left"><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Optici flow needs two consecutive pictures to process. In C language, there is no convenient way to draw arrows, a intensity of color&nbsp;is being substituted for the magnitude of arrows.</font></p>
+<table border="1">
+    <tr>
+        <td width="222">
+            <p><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Bottle1.jpg" width="230" height="172" border="0"></font></p>
+        </td>
+        <td width="225">
+            <p><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Bottle2.jpg" width="230" height="171" border="0"></font></p>
+        </td>
+        <td width="218"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Bottle3.jpg" width="230" height="172" border="0"></font></td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+        <td width="230"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Cup1.jpg" width="230" height="172" border="0"></font></td>
+        <td width="230"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Cup2.jpg" width="230" height="171" border="0"></font></td>
+        <td width="84"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Cup3.jpg" width="230" height="173" border="0"></font></td>
+    </tr>
+</table>
+<p align="left"><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;As I shake the bottle and cup, the movement of &nbsp;pixels around the bottle and cup are&nbsp;greater than other pixels in background. &nbsp;&nbsp;&nbsp;&nbsp;This represents high intensity of white color around the bottle.</font><font color="#333333"></font></p>
+<table border="1">
+    <tr>
+        <td width="230"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Scene1.jpg" width="230" height="172" border="0"></font></td>
+        <td width="230"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Scene2.jpg" width="230" height="172" border="0"></font></td>
+        <td width="84"><font color="#333333"><img src="./../Images/Research/OPTICFLOW/Scene3.jpg" width="252" height="172" border="0"></font></td>
+    </tr>
+</table>
+<p><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Two consecutive pictures of a landscape. Those two pictures are taken in the moving car, so the pixels in the picture are being shifted to the same direction. </font><font color="#333333"></font></p>
+<br><br><br><br><br>
+</div>
+
+</body>
+
+</html>

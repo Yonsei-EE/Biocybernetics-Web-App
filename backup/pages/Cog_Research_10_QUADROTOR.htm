@@ -1,0 +1,170 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-style-type" content="text/css" />
+<link href="./../css/publish.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/common.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Biological Cybernetics Lab</title>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+
+<div id="Contents" class="Contents_Right">
+	
+<P><SPAN style="COLOR: black; FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif;"><B><I><font size="4" face="Helvetica" color="black">IMU with Kalman filter<br>
+</font></I></B></SPAN><font color="#333333"></font></P>
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">Kalman Filter Algorithm</font></span></i><font color="#333333"></font></P>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_1.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+The Kalman filter was developed by Rudolf E. Kalman. Its purpose is to use measurements observed over time, containing noise and other inaccuracies, and produce values that tend to be closer to the true values of the measurements and their associated calculated values. The Kalman filter has many applications in technology, and is an essential part of space and military technology development. The Kalman filter produces estimates of the true values of measurements and their associated calculated values by predicting a value, estimating the uncertainty of the predicted value, and computing a weighted average of the predicted value and the measured value. The most weight is given to the value with the least uncertainty. The estimates produced by the method tend to be closer to the true values than the original measurements because the weighted average has a better estimated uncertainty than either of the values that went into the weighted average. For the linear system, linear Kalman filter is used and for the non-linear system, extended Kalman filter (EKF) can be applied. Following picture shows each algorithm.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_2.jpg" border="0" width="100%"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+Z_k, the measurement is the input of the Kalman filter algorithm. And it uses A, H, Q, R from the system model. Then x_k becomes final output. Linear Kalman filter algorithm and extended kalman filter algorithm are almost same. But as the system model cannot be derived from the nonlinear system, linearization of system model is needed for EKF algorithm. f(x_k), h(x_k) are the nonlinear function from the nonlinear system. Jacobian can be used for the linearization like below:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_3.jpg" border="0"></font></p>
+
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">Kalman Fusion</font></span></i><font color="#333333"></font></P>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+Accelerometer and gyroscope are hard to use separately to measure the position angle. Position angle that derived from the accelerometer has noise, while the gyroscope shows the drift. Though accelerometer gives noisy output, its measuring error is conservative. On the other side, gyroscope gives relatively noise immuned output for short time duration, though its error will be diverged for long time period. With these characteristics, we can see that two sensors are in complementary relationship. If gyro drift can be corrected by accelerometer, the output angle can have reliability. Likewise, by combination of two complementary sensors, improved output can be calculated. This is the concept of the Kalman fusion.
+</font></span><font color="#333333"></font></p>
+
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">Euler angles and Inertial Measurement Unit (IMU)</font></span></i><font color="#333333"></font></P>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+The Euler angles are three angles introduced by Leonhard Euler to describe the orientation of a rigid body. To describe such an orientation in 3-dimensional Euclidean space three parameters are required. They can be given in several ways, Euler angles being one of them. Following picture shows the concept of the Euler angles well.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_4.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+Rotational angle for the each x, y, and z-axis are called roll, pitch, and yaw. An inertial measurement unit, or IMU, is an electronic device that measures orientation and gravitational forces using a combination of accelerometers and gyroscopes. IMUs are typically used to maneuver aircraft, including UAVs, among many others, and spacecraft, including shuttles, and satellites. The IMU is the main component of inertial navigation systems used in aircraft, spacecraft, watercraft, and guided missiles among others. Simply, IMU measures the Euler angles.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+To get the reliable position angle(Euler angle) with accelerometer and gyroscope, Kalman fusion is needed. Following figure shows the concept of Kalman fusion in IMU.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_5.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+To perform the Kalman fusion, system model, A, H, R, and Q should be decided. Interested variables are pi, theta and ro. So, the state variable can be set as like follows:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_6.jpg" border="0"></font></p>
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_7.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+From this relationship, we can get system model:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_8.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+But the system model, f(x) is not linear. So, it has to be linearized by using Jacobian:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_9.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+From above equation, system matrix A can be derived. And measuring model can be represented as:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_10.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+In this case, the system model is linear. So, simply system matrix H can be obtained. Finally, the system matrices A and H are derived. With this system model, Kalman filter algorithm can be applied.
+We implemented this algorithm to self-made IMU circuit. The pictures of the self-made IMU are attached below:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_11.jpg" border="0" width="100%"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+IMU is implemented on 32mm X 32mm size PCB. On the upper side, LMX9838 Bluetooth serial port module is attached, and on the lower side, MMA7260 (3-axis MEMS accelerometer) and two LPY530AL (dual axis MEMS gyroscope) are mounted as sensor. And to compute the Kalman fusion, STM32F103C8T6 (32-bit ARM Cortex-M3) processor is used. It uses 8MHz external crystal and by using inside PLL circuit, it can runs at 72MHz. It can calculate Kalman filter algorithm more than 1000 time per 1sec with powerful engine. Following shows the circuit block diagram.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_12.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+The output of the MMA7260 Accelerometer and the LPY530AL gyroscopes are the analog signal. These signals are converted into digital data by using STM32F103C8T6’s internal 12-bit analog-to-digital converter. Updated result can be transmitted UART communication protocol via Bluetooth or direct connection of other system. As MATLAB supports UART serial communication, IMU data can be collected with MATLAB. Attached picture below shows the result with real-time MATLAB plotting of the IMU data.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_13.jpg" border="0"></font></p>
+
+<P><SPAN style="COLOR: black; FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif;"><B><I><font size="4" face="Helvetica" color="black">Quadrotor with IMU<br>
+</font></I></B></SPAN><font color="#333333"></font></P>
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">Quadrotor</font></span></i><font color="#333333"></font></P>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+A quadrotor, also called a quadrotor helicopter or quadrocopter, is an aircraft that is lifted and propelled by four rotors. Following shows the schematic of reaction torques on each motor of a quadrotor aircraft, due to spinning rotors.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_14.jpg" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+In quadrotor system, each rotor produces both a thrust and torque about its center of rotation, as well as a drag force opposite to the vehicle's direction of flight. If all rotors are spinning at the same angular velocity, with rotors one and three rotating clockwise and rotors two and four counterclockwise, the net aerodynamic torque, and hence the angular acceleration about the yaw axis is exactly zero, which implies that the yaw stabilizing rotor of conventional helicopters is not needed. Yaw is induced by mismatching the balance in aerodynamic torques. Angular accelerations about the pitch and roll axes can be caused separately without impacting the yaw axis. Each pair of blades rotating in the same direction controls one axis, either roll or pitch, and increasing thrust for one rotor while decreasing thrust for the other will maintain the torque balance needed for yaw stability and induce a net torque about the roll or pitch axes. This way, fixed rotor blades can be made to maneuver the quad rotor vehicle in all dimensions. Translational acceleration is achieved by maintaining a non-zero pitch or roll angle. Based on these flight control method, following control block diagram can be used.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_15.jpg" width="780" border="0"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+Quadrotor hardware that we built are shown below.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_16.jpg" border="0" width="100%"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+There are 4 rotors to control, so it takes 4 PWM channels, and to get the position angle data from the IMU, 1 UART communication channel is needed. And to communicate with PC, 1 more UART channel is required. So, we chose ATmega162 as controller, which has 6 PWM channels and supporting 2 UART communication channels. Each rotor can be driven by IRLML6502 HEXFET with PWM signal from the ATmega162. Controller circuit has same size with IMU module that we build and designed to mount IMU module.
+</font></span><font color="#333333"></font></p>
+
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">IMU tester with MATLAB GUI</font></span></i><font color="#333333"></font></P>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+And to check the status of the robots, we made GUI program with MATLAB. By using UART serial communication, posture data(Euler angles) of robots can be transfer to MATLAB. For the roll, pitch, and yaw, three rotation matrices X, Y, and Z can be calculated:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_17.jpg" border="0" width="100%"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+Then, direction cosine matrix (DCM) is given as:
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_18.jpg" border="0" width="100%"></font></p>
+
+<p class=MsoNormal style='text-indent:15.0pt;mso-char-indent-count:1.5'><span
+lang=EN-US style='mso-bidi-font-size:10.0pt;mso-bidi-font-family:"Times New Roman"'><font face="Helvetica" color="#333333">
+With this matrix, representing of robot’s posture in 3-dimensional space is possible. Following figure shows the MATLAB GUI program for the quadrotor.
+</font></span><font color="#333333"></font></p>
+
+<p class=MsoNormal style='text-align:center'><font color="#333333"><img src="./../Images/Research/QUADROTOR/Quad_19.jpg" width="780" border="0"></font></p>
+
+</div>
+
+</body>
+
+</html>

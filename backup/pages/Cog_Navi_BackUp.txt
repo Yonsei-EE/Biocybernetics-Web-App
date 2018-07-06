@@ -1,0 +1,49 @@
+<div>
+
+<span class="Nav_Title">
+<a href="Cog_Home.html" target="right"><b>Home</b></a><br><br>
+
+<font color="#7a1c1d"><b>Introduction</b></font><br>
+<span class="Nav_Menu">
+	<a href="Cog_Prof.html" target="right">Professor</a><br>
+	<a href="Cog_Introduction.html" target="right">Laboratory</a><br>
+	<!--
+	<span style="color:rgb(0,0,0);font-size:11px; line-height:18px; font-weight:500;font-family:arial,helvetica,sans-serif;position: relative; left: 25px; ">
+		<a href="IROS13_VenueMedia.html" target="right">Ph.D</a><br>
+		<a href="IROS13_VenueMedia.html" target="right">Master</a><br>
+	</span>
+	-->
+</span>
+
+<br>
+
+<font color="#7a1c1d"><b>People</b></font><br>
+<span class="Nav_Menu">
+	<a href="Cog_People.html#Professor" target="right">Professor</a><br>
+	<a href="Cog_People.html#Doctor" target="right">Doctor degree</a><br>
+	<a href="Cog_People.html#Master" target="right">Master degree</a><br>
+	<a href="Cog_People.html#Intern" target="right">Internship</a><br>
+	<a href="Cog_People.html#Alumni" target="right">Alumni</a><br>
+</span>
+
+<br>
+
+<font color="#7a1c1d"><b>Research</b></font><br>
+<span class="Nav_Menu">
+<a href="Cog_Research.html" target="right">Artificial Intelligence</a><br>
+<a href="Cog_Research.html" target="right">Bio-Robotics</a><br>
+<a href="Cog_Research.html" target="right">Cognitive Science</a><br>
+<a href="Cog_Research.html" target="right">Robots</a><br>
+</span>
+
+<br>
+
+<font color="#7a1c1d"><b>Publication</b></font><br>
+<span class="Nav_Menu">
+<a href="Cog_Publish.php" target="right">Journal/Conference</a><br>
+<a href="Cog_Publication.html" target="right">Technical Reports</a><br>
+</span>
+<br>
+
+</span>
+</div>

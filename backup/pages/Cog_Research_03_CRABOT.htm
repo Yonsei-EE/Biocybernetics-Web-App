@@ -1,0 +1,99 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-style-type" content="text/css" />
+<link href="./../css/publish.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/common.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="./../css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Biological Cybernetics Lab</title>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+
+<div id="Contents" class="Contents_Right">
+
+
+<P><SPAN style="COLOR: black; FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+<B><I>
+<font size="4" face="Helvetica" color="black">- Vision based Robot Posture Control</font>
+</I></B>
+</SPAN><br><br>
+<font color="#333333"></font><B><I><span style="FONT-FAMILY: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:black;"></span></I></B></P>
+<P><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">CRABOT</font></span></i><font color="#333333"></font></P>
+<p><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;The visual system of fiddler crab is delicately tuned to the geometry of vision in the flat area of inter-tidal mudflats. Their visual system is specialized for geographical characteristics of foreshore with their eyes on long vertical &nbsp;stalks and their equatorial acute zone for vertical resolving power. Even though the crabs do not see as much fine detail as humans, their eyes are tailored to the specific needs in their flat world.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This research presents some experiments of robot control using optical flow by webcam. Our aim is to study of reciprocal action between vision and motion, and verify stability and effectiveness of visually controlled mechanism that will be used to stabilize legged-robot posture. Optic flow is the distribution of apparent velocities of movement of brightness pattern in an image. If robot has eyes, that is camera, so that robot can obtain optical flow from its motion, it can be calculated the velocity and direction of robot movement. Then theseresults go back to the robot system and are reflected in the control. Consequently, throughout the information of optical flow, visual factor can affect the motion of the device. To identify the effect of optical flow based fobot control, we built a crab-shaped robot: it mainly consist of two robot obstacle avoidance, stabiliztion and walking gait control. We provie the comparison of the effectiveness of the result obtained by both model; vision-based control and non vision-based control. CRABOT which is crab-shped robot is used as the mobile robot for experiment.</font><font color="#333333"></font></p>
+
+<p class=Text><span lang=EN-US style='mso-fareast-language:KO'><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;Optical flow research which I have done&nbsp;shows
+that the incline&nbsp;can be calculated from optic flow change. Using optical flow, robot's stabilization can be achieved.&nbsp;To verify this
+method, we test the optical flow posture control using CRABOT. To introduce the
+algorithm, the angle value of inclination from optical flow decides the magnitude
+of leg lifting height.</font></span><font color="#333333"></font></p>
+<p align="center"><font color="#333333"><img src="./../Images/Research/CRABOT/CRABOT_1.JPG" width="282" height="239" border="0"></font></p>
+<p class=Text align="left"><span lang=EN-US style='mso-fareast-language:KO'><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;For first step
+of this test, we drew the black lines on the wall, and then make the CRABOT
+follow the line. When the CRABOT passes the horizontal line, the optical flow
+breaks out vertically, so the angle of inclination nears the zero. In the
+second zone, however, the lines are inclined left side. So the optic flow lean toward
+-45˚. As a result, CRABOT raise its right leg higher than left one; the body is
+tilted same direction with line. At the third zone, the line inclined in
+opposite direction to the second zone. Consequently, the CRABOT tilt its body
+CCW.</font></span><font color="#333333"></font></p>
+<p align="center"><font color="#333333"><img src="./../Images/Research/CRABOT/CRABOT_2.JPG" width="403" height="209" border="0"></font></p>
+<p align="center"><font color="#333333"><img src="./../Images/Research/CRABOT/CRABOT_3.JPG" width="450" height="547" border="0"></font></p>
+<P align="left"><i><span style="font-family:'Times New Roman'; font-size:12pt;"><font face="Helvetica Black" color="#333333">MOVIE</font></span></i><font color="#333333"></font></P>
+<p class=Text align="left"><span lang=EN-US style='mso-fareast-language:KO'><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;Walking test</font></span><font color="#333333"></font></p>
+<table border="1" width="994">
+    <tr>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=0.1.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=0.3.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=0.5.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=0.8.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=1.0.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+        <td width="130">
+            <p align="center"><font color="#333333"><video src="./../Images/Research/CRABOT/T=1.5.wmv" controls loop autoplay width="130"></video></font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=0.1</font><font color="#333333"></font></p>
+        </td>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=0.3</font><font color="#333333"></font></p>
+        </td>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=0.5</font><font color="#333333"></font></p>
+        </td>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=0.8</font><font color="#333333"></font></p>
+        </td>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=1.0</font><font color="#333333"></font></p>
+        </td>
+        <td>
+            <p align="center"><font face="Helvetica Narrow" color="#333333">T=1.5</font><font color="#333333"></font></p>
+        </td>
+    </tr>
+</table>
+<p class=Text align="left"><span lang=EN-US style='mso-fareast-language:KO'><font face="Helvetica" color="#333333">&nbsp;&nbsp;&nbsp;Stabilization test</font></span><font color="#333333"></font></p>
+<P align="left"><font color="#333333">
+	<video src="./../Images/Research/CRABOT/front.wmv" controls loop autoplay width="227"></video>
+	<video src="./../Images/Research/CRABOT/back.wmv" controls loop autoplay width="227"></video>
+<P align="left"><font face="Helvetica" color="#333333">download: </font>
+<a href="./../Images/Research/CRABOT/front.wmv"><font face="Helvetica" color="#333333">front</font></a>
+<font face="Helvetica" color="#333333"> / </font>
+<a href="./../Images/Research/CRABOT/back.wmv"><font face="Helvetica" color="#333333">back</font></a></P>
+<br><br><br><br><br>
+</div>
+
+</body>
+
+</html>
