@@ -19,6 +19,43 @@ li {
   margin: .5em 0 .5em 1.5em;
 }
 
+.selected {
+  color: white;
+}
+
+#container-toggle-menu {
+  position: absolute;
+  background-color: lightblue;
+  width: 6em;
+  height: 100%;
+  z-index: -1;
+  transition: width 300ms ease-in-out;
+}
+
+#container-toggle-menu.clicked {
+  width: 19em;
+}
+
+#toggle-menu {
+  margin: 1em;
+  margin-bottom: .8em;
+}
+
+.container-menu {
+  width: 19em;
+}
+
+#menu {
+  font-family: 'Ubuntu';
+  -webkit-animation-duration: 1s;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.container-submenu {
+  width: 19em;
+}
+
 .submenu {
   font-family: 'Ubuntu';
   font-size: 2.2em;
@@ -29,46 +66,43 @@ li {
   -webkit-animation-duration: .2s;
 }
 
-#container-menu {
+#test {
   position: absolute;
-  background-color: lightblue;
-  width: 6em;
+  left: 19em;
+  top: 0;
+  width: 25em;
   height: 100%;
-  z-index: -1;
-  transition: width 300ms ease-in-out;
-}
-
-#container-menu.clicked {
-  width: 19em;
-}
-
-#toggle-menu {
-  margin: 1em;
-  margin-bottom: .8em;
-}
-
-#menu {
-  font-family: 'Ubuntu';
-  -webkit-animation-duration: 1s;
-  font-size: 2.2em;
-  font-weight: bold;
+  background-color: white;
+  z-index: 1;
+  display: none;
 }
 
 @media only screen and (max-width: 480px) {
   .fa-2x {
     font-size: 1.5em;
   }
-  .angle {
-    -webkit-animation-duration: 1s;
-    font-size: 1.5em;
-  }
-  #container-menu {
-    width: 4.3em;
-  }
-  #container-menu.clicked {
-    width: 12em;
-  }
   li {
     margin-left: 1.6em;
+  }
+  .container-menu {
+    width: 12em;
+  }
+  #menu {
+    font-size: 1.3em;
+  }
+  .container-submenu {
+    width: 12em;
+  }  
+  .submenu {
+    font-size: 1.3em;
+  }
+  #container-toggle-menu {
+    width: 4.3em;
+  }
+  #container-toggle-menu.clicked {
+    width: 12em;
+  }
+  #test {
+    left: 12em;
   }
 }

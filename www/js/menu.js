@@ -10,7 +10,7 @@ $('#toggle-menu').on('click', function() {
   else if ($('#test').is(':visible')) {
     animationName = 'animated bounceOutLeft';
     $('.submenu > li').css('-webkit-animation-duration', '1s');
-    $('#container-menu').removeClass('clicked');
+    $('#container-toggle-menu').removeClass('clicked');
     $('#menu').removeClass('clickable');
     $('#submenu' + i).children().each(function(index, value) {
       delay = 0.2 * index + 's';
@@ -29,7 +29,7 @@ $('#toggle-menu').on('click', function() {
   }
   else if ($('#menu').is(':hidden')) {
     animationName = 'animated bounceInLeft';
-    $('#container-menu').addClass('clicked');
+    $('#container-toggle-menu').addClass('clicked');
     $('#menu').css('display', 'initial');
     $('#menu').removeClass('clickable');
     $('#menu').children().each(function(index, value) {
@@ -47,7 +47,7 @@ $('#toggle-menu').on('click', function() {
   } else if ($('#menu').is('.clickable')) {
     animationName = 'animated bounceOutLeft';
     $('.submenu').css('display', 'none');
-    $('#container-menu').removeClass('clicked');
+    $('#container-toggle-menu').removeClass('clicked');
     $('#menu').removeClass('clickable');
     $('#menu').children().each(function(index, value) {
       delay = 0.2 * index + 's';
@@ -63,8 +63,11 @@ $('#toggle-menu').on('click', function() {
 });
 
 $('.category').on('click', function() {
-  if ($('#menu').is('.clickable')) {
-    i = $(this).attr('id');
+  i = $(this).attr('id');
+  if ($('#submenu' + i).length == 0 ) {
+    // do nothing
+  }
+  else if ($('#menu').is('.clickable')) {
     $('#menu').children().css('-webkit-animation-duration', '.2s');
     $('#menu').children().addClass('animated slideOutLeft').one(animationEnd, function() {
       $('#menu').css('display', 'none');
