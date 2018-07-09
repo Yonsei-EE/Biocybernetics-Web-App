@@ -17,44 +17,49 @@
   <div id="container-menu">
   </div>
   <a href="#"><i id="toggle-menu" class="fas fa-bars fa-2x"></i></a>
-  <ul id="menu" class="clickable">
-    <li>
-      <i class="fas angle"><a href="#"> Home</a></i>
-    </li>
-    <li>
-      <i class="fas angle"><a href="#"> Introduction</a></i>
-      <ul class="submenu clickable">
-        <li><a href="#">Professor</a></li>
-        <li><a href="#">Laboratory</a></li>
-      </ul>
-    </li>
-    <li>
-      <i class="fas angle"><a href="#"> People</a></i>
-      <ul class="submenu clickable">
-        <li><a href="#">Professor</a></li>
-        <li><a href="#">Doctor degree</a></li>
-        <li><a href="#">Master degree</a></li>
-        <li><a href="#">Internship</a></li>
-        <li><a href="#">Alumni</a></li>
-      </ul>
-    </li>
-    <li>
-      <i class="fas angle"><a href="#"> Research</a></i>
-      <ul class="submenu clickable">
-        <li><a href="#">Bio-Robotics</a></li>
-        <li><a href="#">Cognitive Science</a></li>
-        <li><a href="#">Machine Learning</a></li>
-      </ul>
-    </li>
-    <li>
-      <i class="fas angle"><a href="#"> Publication</a></i>
-      <ul class="submenu clickable">
-        <li><a href="#">Journel/Conference</a></li>
-        <li><a href="#">Technical Reports</a></li>
-        <li><a href="#">Patents</a></li>
-      </ul>
-    </li>
-  </ul>
+  <div style="width:19em;">
+    <ul id="menu" class="clickable">
+      <li><a id="1" class="category" href="#"> Home</a></li>
+      <li><a id="2" class="category" href="#"> Introduction</a></li>
+      <li><a id="3" class="category" href="#"> People</a></li>
+      <li><a id="4" class="category" href="#"> Research</a></li>
+      <li><a id="5" class="category" href="#"> Publication</a></li>
+    </ul>
+  </div>
+  <div style="width:19em;">
+    <ul id="submenu2" class="submenu clickable">
+      <li><a href="#">Professor</a></li>
+      <li><a href="#">Laboratory</a></li>
+      <li><a class="back" href="#">Back</a></li>
+    </ul>
+  </div>
+  <div style="width:19em;">
+    <ul id="submenu3" class="submenu clickable">
+      <li><a href="#">Professor</a></li>
+      <li><a href="#">Ph.D</a></li>
+      <li><a href="#">M.S</a></li>
+      <li><a href="#">Internship</a></li>
+      <li><a href="#">Alumni</a></li>
+      <li><a class="back" href="#">Back</a></li>
+    </ul>
+  </div>
+  <div style="width:19em;">
+    <ul id="submenu4" class="submenu clickable">
+      <li><a href="#">Bio-Robotics</a></li>
+      <li><a href="#">Cognitive Science</a></li>
+      <li><a href="#">Machine Learning</a></li>
+      <li><a class="back" href="#">Back</a></li>
+    </ul>
+  </div>
+  <div style="width:19em;">
+    <ul id="submenu5" class="submenu clickable">
+      <li><a href="#">Journel/<br>Conference</a></li>
+      <li><a href="#">Technical Reports</a></li>
+      <li><a href="#">Patents</a></li>
+      <li><a class="back" href="#">Back</a></li>
+    </ul>
+  </div>
+  <div id="test" style="position:absolute;left:19em;top:0;width:25em;height:100%;background-color:white;z-index:1;display:none;"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
