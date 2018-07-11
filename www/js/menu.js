@@ -7,29 +7,31 @@ $('#toggle-menu').on('click', function() {
   if ($('#menu').is(':not(.clickable)')) {
     // do nothing
   }
-  else if ($('#test').is(':visible')) {
-    animationName = 'animated bounceOutLeft';
-    $('.submenu > li').css('-webkit-animation-duration', '1s');
+  else if ($('#test').is(':visible')) { // submenu close
+    animationName = 'animated slideOutLeft';
     $('#container-toggle-menu').removeClass('clicked');
+    $('#menu').removeClass('clicked');
+    $('#carousel-home').slick('slickNext');
     $('#menu').removeClass('clickable');
     $('#submenu' + i).children().each(function(index, value) {
-      delay = 0.2 * index + 's';
-      $(this).css('-webkit-animation-delay', delay);
+      // delay = 0.2 * index + 's';
+      // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
     $('#submenu' + i + ' > li:last').one(animationEnd, function() {
       console.log('end');
       $('#submenu' + i).children().removeClass(animationName);
-      $('#submenu' + i).children().css('-webkit-animation-delay', '');
-      $('.submenu > li').css('-webkit-animation-duration', '.2s');
       $('.submenu').css('display', 'none');
       $('#menu').addClass('clickable');
       $('#test').css('display', 'none');
     });
   }
-  else if ($('#menu').is(':hidden')) {
+  else if ($('#menu').is(':hidden')) { // main menu open
     animationName = 'animated bounceInLeft';
     $('#container-toggle-menu').addClass('clicked');
+    $('#main').addClass('clicked');
+    $('#carousel-home').slick('slickNext');
+    $('#menu > li').css('-webkit-animation-duration', '1s');
     $('#menu').css('display', 'initial');
     $('#menu').removeClass('clickable');
     $('#menu').children().each(function(index, value) {
@@ -42,16 +44,20 @@ $('#toggle-menu').on('click', function() {
     });
     $('#menu > li:last').one(animationEnd, function() {
       $('#menu').addClass('clickable');
-      $('#menu').children().css('-webkit-animation-delay', '');
+      $('#menu > li').css('-webkit-animation-delay', '');
+      $('#menu > li').css('-webkit-animation-duration', '');
     });
-  } else if ($('#menu').is('.clickable')) {
-    animationName = 'animated bounceOutLeft';
+
+  } else if ($('#menu').is('.clickable')) { // menu close
+    animationName = 'animated slideOutLeft';
     $('.submenu').css('display', 'none');
     $('#container-toggle-menu').removeClass('clicked');
+    $('#main').removeClass('clicked');
+    $('#carousel-home').slick('slickNext');
     $('#menu').removeClass('clickable');
     $('#menu').children().each(function(index, value) {
-      delay = 0.2 * index + 's';
-      $(this).css('-webkit-animation-delay', delay);
+      // delay = 0.2 * index + 's';
+      // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
     $('#menu > li:last').one(animationEnd, function() {
@@ -67,12 +73,10 @@ $('.category').on('click', function() {
   if ($('#submenu' + i).length == 0 ) {
     // do nothing
   }
-  else if ($('#menu').is('.clickable')) {
-    $('#menu').children().css('-webkit-animation-duration', '.2s');
+  else if ($('#menu').is('.clickable')) { // submenu control
     $('#menu').children().addClass('animated slideOutLeft').one(animationEnd, function() {
       $('#menu').css('display', 'none');
       $(this).removeClass('animated slideOutLeft');
-      $(this).css('-webkit-animation-duration', '1s');
       $(this).off();
       $('#submenu' + i).children().addClass('animated slideInRight').one(animationEnd, function() {
         $(this).removeClass('animated slideInRight');
@@ -86,10 +90,8 @@ $('.category').on('click', function() {
         $('#submenu' + i).css('display', 'none');
         $(this).removeClass('animated slideOutRight');
         $(this).off();
-        $('#menu').children().css('-webkit-animation-duration', '.2s');
         $('#menu').children().addClass('animated slideInLeft').one(animationEnd, function() {
           $(this).removeClass('animated slideInLeft');
-          $(this).css('-webkit-animation-duration', '1s');
           $(this).off();
         });
         $('#menu').css('display', 'initial');

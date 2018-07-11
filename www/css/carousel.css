@@ -1,0 +1,58 @@
+#main {
+    position: absolute;
+    left: 6em;
+    top: 0;
+    width: calc(100% - 6em);
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    transition: width 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+#main.clicked {
+    width: calc(100% - 18em);
+    transform: translate(13em);
+}
+
+#container-carousel-home {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    top: 2em;
+    text-align: center;
+    vertical-align: middle;
+    z-index: -2;
+}
+
+#container-carousel-home .slick-prev:before {
+    color: black;
+}
+
+#container-carousel-home .slick-next:before {
+    color: black;
+}
+
+#item1 {
+    background-color: red;
+    height: 30em;
+}
+
+#item2 {
+    background-color: orange;
+    height: 30em;
+}
+
+#item3 {
+    background-color: yellow;
+    height: 30em;
+}
+
+#item4 {
+    background-color: green;
+    height: 30em;
+}
+
+#item5 {
+    background-color: blue;
+    height: 30em;
+}
