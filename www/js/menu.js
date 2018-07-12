@@ -15,7 +15,7 @@ $('#toggle-menu').on('click', function () {
     $('#container-toggle-menu').removeClass('clicked');
     $('#main').removeClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickNext');
+    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // disable clicking during animation
     $('#menu').removeClass('clickable');
     // add animation
@@ -39,9 +39,9 @@ $('#toggle-menu').on('click', function () {
     $('#container-toggle-menu').addClass('clicked');
     $('#main').addClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickNext');
+    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // display menu
-    $('#container-menu').css('display', 'block');
+    $('.container-menu').css('display', 'block');
     $('#menu').css('display', 'initial');
     // disable clicking during animation
     $('#menu').removeClass('clickable');
@@ -68,7 +68,7 @@ $('#toggle-menu').on('click', function () {
     $('#container-toggle-menu').removeClass('clicked');
     $('#main').removeClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickNext');
+    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // disable clicking during animation
     $('#menu').removeClass('clickable');
     // add animation
@@ -79,7 +79,7 @@ $('#toggle-menu').on('click', function () {
     });
     $('#menu > li:last').one(animationEnd, function () {
       // reset changes
-      $('#container-menu').css('display', 'none');
+      $('.container-menu').css('display', 'none');
       $('#menu').css('display', 'none');
       $('#menu').addClass('clickable');
       $('#menu').children().removeClass(animationName);
@@ -97,7 +97,7 @@ $('.category').on('click', function () {
     // add animation to menu
     $('#menu').children().addClass('animated slideOutLeft').one(animationEnd, function () {
       // reset changes
-      $('#container-menu').css('display', 'none');
+      $('.container-menu').css('display', 'none');
       $('#menu').css('display', 'none');
       $(this).removeClass('animated slideOutLeft');
       $(this).off();
@@ -119,7 +119,7 @@ $('.category').on('click', function () {
         $(this).removeClass('animated slideOutRight');
         $(this).off();
         // open menu
-        $('#container-menu').css('display','initial')
+        $('.container-menu').css('display','block')
         $('#menu').css('display', 'initial');
         // add animation to menu
         $('#menu').children().addClass('animated slideInLeft').one(animationEnd, function () {
