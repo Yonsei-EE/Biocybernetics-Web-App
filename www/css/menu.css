@@ -4,44 +4,36 @@
 
 #container-toggle-menu {
   position: absolute;
-  background-color: lightblue;
-  width: 6em;
+  background-image: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+  width: 0em;
   height: 100%;
   z-index: -1;
-  transition: width 300ms ease-in-out;
+  transition: width .3s ease-in-out;
 }
 
 #container-toggle-menu.clicked {
-  width: 19em;
+  width: 25em;
 }
 
 #toggle-menu {
   margin: 1em;
-  margin-bottom: .8em;
+  margin-bottom: 4em;
 }
 
-.container-menu {
-  width: 19em;
+.container-menu, .container-submenu {
+  width: 25em;
+  text-align: center;
+  display: none;
 }
 
-#menu {
-  font-family: 'Ubuntu';
-  font-size: 2.2em;
-  font-weight: bold;
+#menu, .submenu {
+  font-family: 'Helvetica';
+  font-size: 2em;
+  vertical-align: middle;
 }
 
 #menu li {
   -webkit-animation-duration: .2s;
-}
-
-.container-submenu {
-  width: 19em;
-}
-
-.submenu {
-  font-family: 'Ubuntu';
-  font-size: 2.2em;
-  font-weight: bold;
 }
 
 .submenu li {

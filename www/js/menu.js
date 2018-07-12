@@ -3,99 +3,129 @@ var animationName;
 var animationEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd MSAnimationEnd';
 var i;
 
-$('#toggle-menu').on('click', function() {
+// main menu control
+$('#toggle-menu').on('click', function () {
   if ($('#menu').is(':not(.clickable)')) {
     // do nothing
   }
-  else if ($('#test').is(':visible')) { // submenu close
+  // submenu close
+  else if ($('#submenu' + i).is(':visible')) {
     animationName = 'animated slideOutLeft';
+    // reduce toggle menu, expand main
     $('#container-toggle-menu').removeClass('clicked');
-    $('#menu').removeClass('clicked');
+    $('#main').removeClass('clicked');
+    // carousel fix
     $('#carousel-home').slick('slickNext');
+    // disable clicking during animation
     $('#menu').removeClass('clickable');
-    $('#submenu' + i).children().each(function(index, value) {
+    // add animation
+    $('#submenu' + i).children().each(function (index, value) {
       // delay = 0.2 * index + 's';
       // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
-    $('#submenu' + i + ' > li:last').one(animationEnd, function() {
-      console.log('end');
-      $('#submenu' + i).children().removeClass(animationName);
-      $('.submenu').css('display', 'none');
+    $('#submenu' + i + ' > li:last').one(animationEnd, function () {
+      // reset changes
+      $('#container-submenu' + i).css('display', 'none');
+      $('#submenu' + i).css('display', 'none');
       $('#menu').addClass('clickable');
-      $('#test').css('display', 'none');
+      $('#submenu' + i).children().removeClass(animationName);
     });
   }
-  else if ($('#menu').is(':hidden')) { // main menu open
+  // main menu open
+  else if ($('#menu').is(':hidden')) {
     animationName = 'animated bounceInLeft';
+    // expand toggle menu and reduce main
     $('#container-toggle-menu').addClass('clicked');
     $('#main').addClass('clicked');
+    // carousel fix
     $('#carousel-home').slick('slickNext');
-    $('#menu > li').css('-webkit-animation-duration', '1s');
+    // display menu
+    $('#container-menu').css('display', 'block');
     $('#menu').css('display', 'initial');
+    // disable clicking during animation
     $('#menu').removeClass('clickable');
-    $('#menu').children().each(function(index, value) {
-      delay = 0.2 * index + 's';
+    // add animation
+    $('#menu > li').css('-webkit-animation-duration', '.6s');
+    $('#menu').children().each(function (index, value) {
+      delay = 0.1 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
-      $(this).addClass(animationName).one(animationEnd, function() {
+      $(this).addClass(animationName).one(animationEnd, function () {
         $(this).removeClass(animationName);
         $(this).off();
       });
     });
-    $('#menu > li:last').one(animationEnd, function() {
+    $('#menu > li:last').one(animationEnd, function () {
+      // reset changes
       $('#menu').addClass('clickable');
       $('#menu > li').css('-webkit-animation-delay', '');
       $('#menu > li').css('-webkit-animation-duration', '');
     });
-
-  } else if ($('#menu').is('.clickable')) { // menu close
+    // main menu close
+  } else if ($('#menu').is('.clickable')) {
     animationName = 'animated slideOutLeft';
-    $('.submenu').css('display', 'none');
+    // reduce toggle menu and expand main
     $('#container-toggle-menu').removeClass('clicked');
     $('#main').removeClass('clicked');
+    // carousel fix
     $('#carousel-home').slick('slickNext');
+    // disable clicking during animation
     $('#menu').removeClass('clickable');
-    $('#menu').children().each(function(index, value) {
+    // add animation
+    $('#menu').children().each(function (index, value) {
       // delay = 0.2 * index + 's';
       // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
-    $('#menu > li:last').one(animationEnd, function() {
-      $('#menu').children().removeClass(animationName);
-      $('#menu').addClass('clickable');
+    $('#menu > li:last').one(animationEnd, function () {
+      // reset changes
+      $('#container-menu').css('display', 'none');
       $('#menu').css('display', 'none');
+      $('#menu').addClass('clickable');
+      $('#menu').children().removeClass(animationName);
     });
   }
 });
 
-$('.category').on('click', function() {
+// submenu control
+$('.category').on('click', function () {
   i = $(this).attr('id');
-  if ($('#submenu' + i).length == 0 ) {
+  if ($('#submenu' + i).length == 0) {
     // do nothing
   }
-  else if ($('#menu').is('.clickable')) { // submenu control
-    $('#menu').children().addClass('animated slideOutLeft').one(animationEnd, function() {
+  else if ($('#menu').is('.clickable')) {
+    // add animation to menu
+    $('#menu').children().addClass('animated slideOutLeft').one(animationEnd, function () {
+      // reset changes
+      $('#container-menu').css('display', 'none');
       $('#menu').css('display', 'none');
       $(this).removeClass('animated slideOutLeft');
       $(this).off();
-      $('#submenu' + i).children().addClass('animated slideInRight').one(animationEnd, function() {
+      // open submenu
+      $('#container-submenu' + i).css('display', 'block');
+      $('#submenu' + i).css('display', 'initial');
+      // add animation to submenu
+      $('#submenu' + i).children().addClass('animated slideInRight').one(animationEnd, function () {
         $(this).removeClass('animated slideInRight');
         $(this).off();
       });
-      $('#submenu' + i).css('display', 'initial');
-      $('#test').css('display', 'initial');
     });
-    $('#submenu' + i + ' > li > .back').on('click', function() {
-      $('#submenu' + i).children().addClass('animated slideOutRight').one(animationEnd, function() {
+    // add animation to 'back'
+    $('#submenu' + i + ' > li > .back').on('click', function () {
+      $('#submenu' + i).children().addClass('animated slideOutRight').one(animationEnd, function () {
+        // reset changes
+        $('#container-submenu' + i).css('display', 'none');
         $('#submenu' + i).css('display', 'none');
         $(this).removeClass('animated slideOutRight');
         $(this).off();
-        $('#menu').children().addClass('animated slideInLeft').one(animationEnd, function() {
+        // open menu
+        $('#container-menu').css('display','initial')
+        $('#menu').css('display', 'initial');
+        // add animation to menu
+        $('#menu').children().addClass('animated slideInLeft').one(animationEnd, function () {
           $(this).removeClass('animated slideInLeft');
           $(this).off();
         });
-        $('#menu').css('display', 'initial');
-        $('#test').css('display', 'none');
       })
     })
   }
