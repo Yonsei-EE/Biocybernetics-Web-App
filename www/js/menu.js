@@ -1,6 +1,7 @@
 var delay;
 var animationName;
 var animationEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd MSAnimationEnd';
+var transitionEnd = 'transitionend oTransitionEnd mozTransitionEnd webkitTransitionEnd MSTransitionEnd';
 var i;
 
 // main menu control
@@ -10,7 +11,7 @@ $('#toggle-menu').on('click', function () {
   }
   // submenu close
   else if ($('#submenu' + i).is(':visible')) {
-    animationName = 'animated slideOutLeft';
+    animationName = 'animated';
     // reduce toggle menu, expand main
     $('#container-toggle-menu').removeClass('clicked');
     $('#main').removeClass('clicked');
@@ -24,17 +25,19 @@ $('#toggle-menu').on('click', function () {
       // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
-    $('#submenu' + i + ' > li:last').one(animationEnd, function () {
+    $('#container-toggle-menu').one(transitionEnd, function() {
+    //$('#submenu' + i + ' > li:last').one(animationEnd, function () {
       // reset changes
       $('#container-submenu' + i).css('display', 'none');
       $('#submenu' + i).css('display', 'none');
       $('#menu').addClass('clickable');
       $('#submenu' + i).children().removeClass(animationName);
+      $(this).off();
     });
   }
   // main menu open
   else if ($('#menu').is(':hidden')) {
-    animationName = 'animated bounceInLeft';
+    animationName = 'animated';
     // expand toggle menu and reduce main
     $('#container-toggle-menu').addClass('clicked');
     $('#main').addClass('clicked');
@@ -46,24 +49,26 @@ $('#toggle-menu').on('click', function () {
     // disable clicking during animation
     $('#menu').removeClass('clickable');
     // add animation
-    $('#menu > li').css('-webkit-animation-duration', '.6s');
+    $('#menu > li').css('-webkit-animation-duration', '1s');
     $('#menu').children().each(function (index, value) {
-      delay = 0.1 * index + 's';
+      delay = '.8s';//0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName).one(animationEnd, function () {
         $(this).removeClass(animationName);
         $(this).off();
       });
     });
-    $('#menu > li:last').one(animationEnd, function () {
+    $('#container-toggle-menu').one(transitionEnd, function() {
+    //$('#menu > li:last').one(animationEnd, function () {
       // reset changes
       $('#menu').addClass('clickable');
       $('#menu > li').css('-webkit-animation-delay', '');
       $('#menu > li').css('-webkit-animation-duration', '');
+      $(this).off();
     });
     // main menu close
   } else if ($('#menu').is('.clickable')) {
-    animationName = 'animated slideOutLeft';
+    animationName = 'animated';
     // reduce toggle menu and expand main
     $('#container-toggle-menu').removeClass('clicked');
     $('#main').removeClass('clicked');
@@ -77,12 +82,14 @@ $('#toggle-menu').on('click', function () {
       // $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
-    $('#menu > li:last').one(animationEnd, function () {
+    $('#container-toggle-menu').one(transitionEnd, function() {
+    //$('#menu > li:last').one(animationEnd, function () {
       // reset changes
       $('.container-menu').css('display', 'none');
       $('#menu').css('display', 'none');
       $('#menu').addClass('clickable');
       $('#menu').children().removeClass(animationName);
+      $(this).off();
     });
   }
 });
@@ -129,4 +136,12 @@ $('.category').on('click', function () {
       })
     })
   }
+})
+
+// select category
+$('.selectable').on('click', function() {
+  $('.selected').removeClass('selected').next().removeClass('blob');
+  $(this).addClass('selected').next().addClass('blob');
+  if($(this).parent('li').parent('.submenu').attr('id'))
+    $('#' + $(this).parent('li').parent('.submenu').attr('id').slice(-1)).addClass('selected').next().addClass('blob');
 })

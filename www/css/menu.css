@@ -2,13 +2,37 @@
   color: white;
 }
 
+.blob {
+  background-image: url(../images/blob.svg);
+  animation-duration: 2000ms;
+  animation-timing-function: steps(60);
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: auto 100px;
+  animation-name: play60;
+  animation-iteration-count: infinite;
+  z-index: -1;
+  position: absolute;
+}
+
+@keyframes play60 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -6000px 0px;
+    /* 100px*60 */
+  }
+}
+
 #container-toggle-menu {
   position: absolute;
   background-image: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
   height: 100%;
   width: 0;
   z-index: -1;
-  transition: width .3s ease-in-out;
+  transition: width .8s cubic-bezier(1, .01, .54, 1);
 }
 
 #container-toggle-menu.clicked {
@@ -21,14 +45,24 @@
 }
 
 #container-toggle {
-  height: 6em;
   position: fixed;
   z-index: 2;
 }
 
 #toggle-menu {
-  margin: 1em;
+  float: left;
+  margin: 3em;
   cursor: pointer;
+  width: 3em;
+  transition: transform 300ms ease-in-out;
+}
+
+#toggle-menu:hover {
+  transform: scale(1.1);
+}
+
+#toggle-logo {
+  display: none;
 }
 
 .container-menu-master {
@@ -62,25 +96,49 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .container-menu {
-    width: 12em;
+  .container-menu-master {
+    width: 100%;
   }
-  #menu {
-    font-size: 1.3em;
+  .container-menu {
+    width: 100%;
+  }
+  #menu, .submenu {
+    font-size: 1.5em;
   }
   .container-submenu {
-    width: 12em;
-  }
-  .submenu {
-    font-size: 1.3em;
+    width: 100%;
   }
   #container-toggle-menu {
     width: 4.3em;
   }
   #container-toggle-menu.clicked {
-    width: 12em;
+    width: 100%;
   }
-  #test {
-    left: 12em;
+  #container-toggle {
+    background-color: #6f94ca;
+    width: 100%;
+  }
+  #toggle-menu {
+    margin: 1.5em;
+    width: 2.5em;
+  }
+  #toggle-logo {
+    display: initial;
+    width: 5.5em;
+    margin-left: calc(50% - 8.25em);
+  }
+  .blob {
+    width: 80px;
+    height: 80px;
+    background-size: auto 80px;
+  }
+  @keyframes play60 {
+    0% {
+      background-position: 0px 0px;
+    }
+    100% {
+      background-position: -4800px 0px;
+      /* 100px*60 */
+    }
   }
 }
