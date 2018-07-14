@@ -14,9 +14,10 @@ $('#toggle-menu').on('click', function () {
     animationName = 'animated';
     // reduce toggle menu, expand main
     $('#container-toggle-menu').removeClass('clicked');
+    $('#container-carousel-home').removeClass('clicked');
     $('#main').removeClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
+    // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // disable clicking during animation
     $('#menu').removeClass('clickable');
     // add animation
@@ -37,12 +38,13 @@ $('#toggle-menu').on('click', function () {
   }
   // main menu open
   else if ($('#menu').is(':hidden')) {
-    animationName = 'animated';
+    animationName = 'animated fadeIn';
     // expand toggle menu and reduce main
     $('#container-toggle-menu').addClass('clicked');
+    $('#container-carousel-home').addClass('clicked');
     $('#main').addClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
+    // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // display menu
     $('.container-menu').css('display', 'block');
     $('#menu').css('display', 'initial');
@@ -51,15 +53,15 @@ $('#toggle-menu').on('click', function () {
     // add animation
     $('#menu > li').css('-webkit-animation-duration', '1s');
     $('#menu').children().each(function (index, value) {
-      delay = '.8s';//0.2 * index + 's';
+      delay = '.6s';//0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName).one(animationEnd, function () {
         $(this).removeClass(animationName);
         $(this).off();
       });
     });
-    $('#container-toggle-menu').one(transitionEnd, function() {
-    //$('#menu > li:last').one(animationEnd, function () {
+    //$('#container-toggle-menu').one(transitionEnd, function() {
+    $('#menu > li:last').one(animationEnd, function () {
       // reset changes
       $('#menu').addClass('clickable');
       $('#menu > li').css('-webkit-animation-delay', '');
@@ -71,9 +73,10 @@ $('#toggle-menu').on('click', function () {
     animationName = 'animated';
     // reduce toggle menu and expand main
     $('#container-toggle-menu').removeClass('clicked');
+    $('#container-carousel-home').removeClass('clicked');
     $('#main').removeClass('clicked');
     // carousel fix
-    $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
+    // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
     // disable clicking during animation
     $('#menu').removeClass('clickable');
     // add animation

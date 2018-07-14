@@ -32,7 +32,7 @@
   height: 100%;
   width: 0;
   z-index: -1;
-  transition: width .8s cubic-bezier(1, .01, .54, 1);
+  transition: width .8s cubic-bezier(1, .01, .54, 1);//cubic-bezier(1, -0.45, 0.54, 1);
 }
 
 #container-toggle-menu.clicked {
@@ -73,6 +73,7 @@
   justify-content: center;
   position: fixed;
   margin: 0;
+  overflow: hidden;
 }
 
 .container-menu, .container-submenu {
@@ -110,6 +111,7 @@
   }
   #container-toggle-menu {
     width: 4.3em;
+    transition: width .8s cubic-bezier(1, .01, .54, 1);
   }
   #container-toggle-menu.clicked {
     width: 100%;

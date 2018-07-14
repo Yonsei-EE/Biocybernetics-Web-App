@@ -4,12 +4,17 @@
 
 #container-carousel-home {
   position: relative;
-  width: 55vw;
+  width: 100vw;
   margin: auto;
   top: 0;
   text-align: center;
   vertical-align: middle;
   z-index: -2;
+  transition: transform .8s cubic-bezier(1, .01, .54, 1);
+}
+
+#container-carousel-home.clicked {
+  transform: translateX(-12.5em);
 }
 
 #container-carousel-home .slick-prev {
@@ -36,9 +41,18 @@
   margin-top: 1em;
 }
 
+.item {
+  display: flex;
+  justify-content: center;
+  margin: 0 5vw;
+  padding: 0 0 1em 0;
+  background: transparent;
+}
+
 .labPoster {
   width: 100%;
-  height: 30vw;
+  height: 60vh;
+  box-shadow: 5px 5px 10px #88888847
 }
 
 /* #item1 {
@@ -70,6 +84,12 @@
   }
   #container-carousel-home .slick-next {
     right: -10%;
+  }
+  .slick-dots {
+    margin: 0;
+  }
+  .item {
+    margin: 0;
   }
   .labPoster {
     height: 60vw;
