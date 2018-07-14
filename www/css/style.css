@@ -57,7 +57,7 @@ li {
 
 .loremIpsum {
   width: 80%;
-  margin: 10%;
+  margin: 5% 10% 0 10%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -79,5 +79,10 @@ li {
   }
   #bannerLogo {
     display: none;
+  }
+  .loremIpsum {
+    width: 80%;
+    margin: 0;
+    padding: 10%;
   }
 }
