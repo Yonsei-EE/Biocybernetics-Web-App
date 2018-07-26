@@ -53,7 +53,7 @@ $('#toggle-menu').on('click', function () {
     // add animation
     $('#menu > li').css('-webkit-animation-duration', '1s');
     $('#menu').children().each(function (index, value) {
-      delay = '.6s';//0.2 * index + 's';
+      delay = '.4s';//0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName).one(animationEnd, function () {
         $(this).removeClass(animationName);

@@ -10,12 +10,12 @@
   text-align: center;
   vertical-align: middle;
   z-index: -2;
-  transition: transform .8s cubic-bezier(1, .01, .54, 1);
+  /* transition: transform .5s cubic-bezier(1, .01, .54, 1); */
 }
 
-#container-carousel-home.clicked {
+/* #container-carousel-home.clicked {
   transform: translateX(-12.5em);
-}
+} */
 
 #container-carousel-home .slick-prev {
   left: -5vw;
@@ -78,7 +78,11 @@
 @media only screen and (max-width: 480px) {
   #container-carousel-home {
     width: 80vw;
+    translate: none;
   }
+  #container-carousel-home.clicked {
+    transform: none;
+  }  
   #container-carousel-home .slick-prev {
     left: -10%;
   }
