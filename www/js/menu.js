@@ -22,7 +22,7 @@ $('#toggle-menu').on('click', function () {
     $('#menu').removeClass('clickable');
     // add animation
     $('#submenu' + i).children().each(function (index, value) {
-      delay = 0.5 + 's'; //0.2 * index + 's';
+      delay = 0.6 + 's'; //0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
@@ -54,7 +54,7 @@ $('#toggle-menu').on('click', function () {
     // add animation
     $('#menu > li').css('-webkit-animation-duration', '1s');
     $('#menu').children().each(function (index, value) {
-      delay = '.4s';//0.2 * index + 's';
+      delay = '.6s';//0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName).one(animationEnd, function () {
         $(this).removeClass(animationName);
@@ -82,7 +82,7 @@ $('#toggle-menu').on('click', function () {
     $('#menu').removeClass('clickable');
     // add animation
     $('#menu').children().each(function (index, value) {
-      delay = 0.5 + 's'; //0.2 * index + 's';
+      delay = 0.6 + 's'; //0.2 * index + 's';
       $(this).css('-webkit-animation-delay', delay);
       $(this).addClass(animationName);
     });
