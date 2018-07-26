@@ -95,6 +95,12 @@ li {
   #bannerLogo {
     display: none;
   }
+  #toggle-logo {
+    display: initial;
+    width: 3em;
+    height: 3em;
+    margin-left: calc(50% - 7em);
+  }
   .loremIpsum {
     width: 80%;
     margin: 0;
