@@ -18,6 +18,8 @@ $(document).ready(function () {
             settings: {
               centerMode: false,
               centerPadding: '0vw',
+              cssEase: 'ease-in-out',
+              speed: 500
             }
           }
         ]

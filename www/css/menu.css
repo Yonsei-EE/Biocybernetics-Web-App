@@ -95,20 +95,16 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .container-menu-master {
-    width: 100%;
-  }
   .container-menu {
-    width: 100%;
+    width: 100vw;
   }
   #menu, .submenu {
     font-size: 1.5em;
   }
   .container-submenu {
-    width: 100%;
+    width: 100vw;
   }
   #container-toggle-menu {
-    width: 4.3em;
     transition: width .8s cubic-bezier(1, .01, .54, 1);
   }
   #container-toggle-menu.clicked {
