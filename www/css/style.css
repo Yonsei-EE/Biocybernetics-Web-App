@@ -33,7 +33,7 @@ li {
 
 #banner {
   width: 100%;
-  height: 9em;
+  height: 15vh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -41,14 +41,14 @@ li {
 }
 
 #bannerLogo {
-  width: 7em;
-  height: 7em;
+  width: 10vh;
+  height: 10vh;
 }
 
 #toggle-logo {
   display: none;
-  width: 3em;
-  height: 3em;
+  width: 8vh;
+  height: 8vh;
 }
 
 #main {
@@ -97,9 +97,7 @@ li {
   }
   #toggle-logo {
     display: initial;
-    width: 3em;
-    height: 3em;
-    margin-left: calc(50% - 7em);
+    margin-left: calc(50% - 19vh);
   }
   .loremIpsum {
     width: 80%;
