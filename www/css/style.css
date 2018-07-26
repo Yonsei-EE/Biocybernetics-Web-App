@@ -90,7 +90,7 @@ li {
     transform: translate(100%);
   }
   #banner {
-    height: 7em;
+    height: 15vh;
   }
   #bannerLogo {
     display: none;
