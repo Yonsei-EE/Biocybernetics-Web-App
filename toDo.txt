@@ -1,0 +1,4 @@
+1. change back in menu
+2. animate hamburger menu icon
+3. change mouse to pointer over carousel and logo
+4. add crab video https://youtu.be/gXceF_kx2h0

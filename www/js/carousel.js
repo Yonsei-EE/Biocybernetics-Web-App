@@ -5,7 +5,7 @@ $(document).ready(function () {
         arrows: false,
         cssEase: 'cubic-bezier(.17,.88,.42,1.14)',
         dots: true,
-        infinite: false,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 1500,
