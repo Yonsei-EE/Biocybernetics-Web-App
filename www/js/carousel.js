@@ -10,7 +10,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         speed: 1500,
         centerMode: true,
-        centerPadding: '20vw',
+        centerPadding: '25vw',
         slide: 'div',
         responsive: [
           {

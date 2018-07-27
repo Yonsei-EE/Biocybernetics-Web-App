@@ -53,7 +53,7 @@
 .labPoster {
   width: calc(60vh*720/480); /* 720x480 resolution */
   height: 60vh;
-  box-shadow: 5px 5px 10px #88888847
+  box-shadow: 10px 5px 1px #8888888c;
 }
 
 /* #item1 {
@@ -83,7 +83,7 @@
   }
   #container-carousel-home.clicked {
     transform: none;
-  }  
+  }
   #container-carousel-home .slick-prev {
     left: -10%;
   }
