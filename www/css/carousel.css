@@ -42,17 +42,16 @@
   margin-top: 1em;
 }
 
-.item {
+.item { 
   display: flex;
   justify-content: center;
-  margin: 0 5vw;
+  margin: 0 1.5vw;
   padding: 0 0 1em 0;
   background: transparent;
 }
 
 .labPoster {
-  width: calc(60vh*720/480); /* 720x480 resolution */
-  height: 60vh;
+  width: 100%; /* 720x480 resolution */
   box-shadow: 10px 5px 1px #8888888c;
 }
 

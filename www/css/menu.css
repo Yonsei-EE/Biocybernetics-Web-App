@@ -37,7 +37,7 @@
 }
 
 #container-toggle-menu.clicked {
-  width: 25em;
+  width: 30em;
 }
 
 .container-menu-ultimate {
@@ -75,7 +75,7 @@
 .container-menu, .container-submenu {
   text-align: center;
   display: none;
-  width: 25em;
+  width: 30em;
 }
 
 #menu, .submenu {

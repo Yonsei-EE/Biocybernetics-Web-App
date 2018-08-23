@@ -5,24 +5,24 @@ $(document).ready(function () {
         arrows: false,
         cssEase: 'cubic-bezier(.17,.88,.42,1.14)',
         dots: true,
-        infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         speed: 1500,
         centerMode: true,
-        centerPadding: '25vw',
-        slide: 'div',
         responsive: [
           {
             breakpoint: 480,
             settings: {
               centerMode: false,
-              centerPadding: '0vw',
+              slidesToShow: 1,
               cssEase: 'ease-in-out',
               speed: 500
             }
           }
         ]
     });
+    
     $('body').addClass('ready');
+    if($(window).width()>480)
+      $('#container-carousel-home').css('margin-top','calc(35vh - ' + $('.item').outerHeight()/2 + 'px)');
 });
