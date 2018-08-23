@@ -4,15 +4,6 @@ html, body {
   overflow: auto;
 }
 
-body {
-  opacity: 0;
-  transition: opacity 2s
-}
-
-body.ready {
-  opacity: 1;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -49,6 +40,15 @@ li {
   display: none;
   width: 8vh;
   height: 8vh;
+}
+
+#background {
+  position: absolute;
+  font-size: 12vh;
+  width: 100%;
+  margin: 40vh auto;
+  z-index: -2;
+  text-align: center;
 }
 
 #main {

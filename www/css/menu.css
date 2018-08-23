@@ -85,13 +85,13 @@
 }
 
 #menu li {
-  -webkit-animation-duration: .2s;
-  animation-duration: .2s;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
 }
 
 .submenu li {
-  -webkit-animation-duration: .2s;
-  animation-duration: .2s;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
 }
 
 @media only screen and (max-width: 480px) {

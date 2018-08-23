@@ -6,17 +6,16 @@
   position: relative;
   width: 100vw;
   margin: auto;
-  margin-top: 5vh;
+  margin-top: 100vh;
   top: 0;
   text-align: center;
   vertical-align: middle;
   z-index: -2;
-  /* transition: transform .5s cubic-bezier(1, .01, .54, 1); */
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: .7s;
+  animation-duration: .7s;
 }
-
-/* #container-carousel-home.clicked {
-  transform: translateX(-12.5em);
-} */
 
 #container-carousel-home .slick-prev {
   left: -5vw;
@@ -48,7 +47,13 @@
   margin: 0 1.5vw;
   padding: 0 0 1em 0;
   background: transparent;
+  cursor: pointer;
+  /* transition: filter .5s; */
 }
+
+/* .item:hover{
+  filter: invert(80%);
+} */
 
 .labPoster {
   width: 100%; /* 720x480 resolution */
@@ -78,6 +83,7 @@
 @media only screen and (max-width: 480px) {
   #container-carousel-home {
     width: 80vw;
+    margin-top: 5vh;
     translate: none;
   }
   #container-carousel-home.clicked {
