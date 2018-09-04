@@ -25,7 +25,7 @@ $(document).ready(function () {
     
     animationName = 'animated slideInRight2';
     for(i=2;i>-3;i--) {
-      delay = 0.4*(-1*i+2) + 's';
+      delay = 0.4*(-1*i+2) + 0.5 + 's';
       $("[data-slick-index='" + i + "']").css('-webkit-animation-delay', delay);
       $("[data-slick-index='" + i + "']").addClass(animationName);
     }

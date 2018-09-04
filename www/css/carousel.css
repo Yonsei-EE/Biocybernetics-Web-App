@@ -48,16 +48,16 @@
   padding: 0 0 1em 0;
   background: transparent;
   cursor: pointer;
-  /* transition: filter .5s; */
+  transition: filter .5s;
 }
 
-/* .item:hover{
-  filter: invert(80%);
-} */
+.item:hover{
+  filter: drop-shadow(0px 5px 5px gray);
+}
 
 .labPoster {
   width: 100%; /* 720x480 resolution */
-  box-shadow: 10px 5px 1px #8888888c;
+  /* box-shadow: 10px 5px 1px #8888888c; */
 }
 
 /* #item1 {
