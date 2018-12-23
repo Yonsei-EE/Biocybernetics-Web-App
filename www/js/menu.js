@@ -4,42 +4,36 @@ var animationEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEn
 var transitionEnd = 'transitionend oTransitionEnd mozTransitionEnd webkitTransitionEnd MSTransitionEnd';
 var i;
 
-// main menu control
-$('#toggle-menu').on('click', function () {
-  if ($('#menu').is(':not(.clickable)')) {
-    // do nothing
-  }
-  // submenu close
-  else if ($('#submenu' + i).is(':visible')) {
-    animationName = 'animated fadeOut';
-    // reduce toggle menu, expand main
-    $('#container-toggle-menu').removeClass('clicked');
-    $('#container-carousel-home').removeClass('clicked');
-    $('#main').removeClass('clicked');
-    // carousel fix
-    // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
-    // disable clicking during animation
-    $('#menu').removeClass('clickable');
-    // add animation
-    $('#submenu' + i).children().each(function (index, value) {
-      delay = 0.6 + 's'; //0.2 * index + 's';
-      $(this).css('-webkit-animation-delay', delay);
-      $(this).addClass(animationName);
-    });
-    //$('#container-toggle-menu').one(transitionEnd, function() {
-    $('#submenu' + i + ' > li:last').one(animationEnd, function () {
-      // reset changes
-      $('#container-submenu' + i).css('display', 'none');
-      $('#submenu' + i).css('display', 'none');
-      $('#menu').addClass('clickable');
-      $('#submenu' + i).children().removeClass(animationName);
-      $('#submenu' + i).children().css('-webkit-animation-delay', '');
-      $(this).off();
-    });
-  }
-  // main menu open
-  else if ($('#menu').is(':hidden')) {
-    animationName = 'animated fadeIn';
+function submenuClose() {
+  animationName = 'animated fadeOut';
+  // reduce toggle menu, expand main
+  $('#container-toggle-menu').removeClass('clicked');
+  $('#container-carousel-home').removeClass('clicked');
+  $('#main').removeClass('clicked');
+  // carousel fix
+  // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
+  // disable clicking during animation
+  $('#menu').removeClass('clickable');
+  // add animation
+  $('#submenu' + i).children().each(function (index, value) {
+    delay = 0.6 + 's'; //0.2 * index + 's';
+    $(this).css('-webkit-animation-delay', delay);
+    $(this).addClass(animationName);
+  });
+  //$('#container-toggle-menu').one(transitionEnd, function() {
+  $('#submenu' + i + ' > li:last').one(animationEnd, function () {
+    // reset changes
+    $('#container-submenu' + i).css('display', 'none');
+    $('#submenu' + i).css('display', 'none');
+    $('#menu').addClass('clickable');
+    $('#submenu' + i).children().removeClass(animationName);
+    $('#submenu' + i).children().css('-webkit-animation-delay', '');
+    $(this).off();
+  });
+}
+
+function mainmenuOpen() {
+  animationName = 'animated fadeIn';
     // expand toggle menu and reduce main
     $('#container-toggle-menu').addClass('clicked');
     $('#container-carousel-home').addClass('clicked');
@@ -69,33 +63,51 @@ $('#toggle-menu').on('click', function () {
       $('#menu > li').css('-webkit-animation-duration', '');
       $(this).off();
     });
+}
+
+function mainmenuClose() {
+  animationName = 'animated fadeOut';
+  // reduce toggle menu and expand main
+  $('#container-toggle-menu').removeClass('clicked');
+  $('#container-carousel-home').removeClass('clicked');
+  $('#main').removeClass('clicked');
+  // carousel fix
+  // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
+  // disable clicking during animation
+  $('#menu').removeClass('clickable');
+  // add animation
+  $('#menu').children().each(function (index, value) {
+    delay = 0.6 + 's'; //0.2 * index + 's';
+    $(this).css('-webkit-animation-delay', delay);
+    $(this).addClass(animationName);
+  });
+  //$('#container-toggle-menu').one(transitionEnd, function() {
+  $('#menu > li:last').one(animationEnd, function () {
+    // reset changes
+    $('.container-menu').css('display', 'none');
+    $('#menu').css('display', 'none');
+    $('#menu').addClass('clickable');
+    $('#menu').children().removeClass(animationName);
+    $('#menu').children().css('-webkit-animation-delay', '');
+    $(this).off();
+  });
+}
+
+// main menu control
+$('#toggle-menu').on('click', function () {
+  if ($('#menu').is(':not(.clickable)')) {
+    // do nothing
+  }
+  // submenu close
+  else if ($('#submenu' + i).is(':visible')) {
+    submenuClose();
+  }
+  // main menu open
+  else if ($('#menu').is(':hidden')) {
+    mainmenuOpen();
     // main menu close
   } else if ($('#menu').is('.clickable')) {
-    animationName = 'animated fadeOut';
-    // reduce toggle menu and expand main
-    $('#container-toggle-menu').removeClass('clicked');
-    $('#container-carousel-home').removeClass('clicked');
-    $('#main').removeClass('clicked');
-    // carousel fix
-    // $('#carousel-home').slick('slickGoTo', $('#carousel-home').slick('slickCurrentSlide'));
-    // disable clicking during animation
-    $('#menu').removeClass('clickable');
-    // add animation
-    $('#menu').children().each(function (index, value) {
-      delay = 0.6 + 's'; //0.2 * index + 's';
-      $(this).css('-webkit-animation-delay', delay);
-      $(this).addClass(animationName);
-    });
-    //$('#container-toggle-menu').one(transitionEnd, function() {
-    $('#menu > li:last').one(animationEnd, function () {
-      // reset changes
-      $('.container-menu').css('display', 'none');
-      $('#menu').css('display', 'none');
-      $('#menu').addClass('clickable');
-      $('#menu').children().removeClass(animationName);
-      $('#menu').children().css('-webkit-animation-delay', '');
-      $(this).off();
-    });
+    mainmenuClose();
   }
 });
 
@@ -145,8 +157,43 @@ $('.category').on('click', function () {
 
 // select category
 $('.selectable').on('click', function() {
-  $('.selected').removeClass('selected').next().removeClass('blob');
-  $(this).addClass('selected').next().addClass('blob');
-  if($(this).parent('li').parent('.submenu').attr('id'))
-    $('#' + $(this).parent('li').parent('.submenu').attr('id').slice(-1)).addClass('selected').next().addClass('blob');
+  if ($('#menu').is(':not(.clickable)')) {
+  }
+  else {
+    $('.selected').removeClass('selected').next().removeClass('blob');
+    $(this).addClass('selected').next().addClass('blob');
+    if($(this).parent('li').parent('.submenu').attr('id'))
+      $('#' + $(this).parent('li').parent('.submenu').attr('id').slice(-1)).addClass('selected').next().addClass('blob');
+    if ($('#submenu' + i).is(':visible')) {
+      submenuClose();
+    }
+    else if ($('#menu').is('.clickable')) {
+      mainmenuClose();
+    }
+  }
 })
+
+$('#1').on('click', function() {
+  if($('#1').next().hasClass('blob')){
+    $('.profilePage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+      $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+      $(this).off();
+      $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+        $(this).removeClass('animated slideInRight');
+      });
+    })
+  }
+});
+
+$('#professor').on('click', function() {
+  if($('#professor').next().hasClass('blob')){
+    $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+      $(this).off();
+      $('#professorPage').css('display','grid').addClass('animated slideInUp2').one(animationEnd, function() {
+        $(this).removeClass('animated slideInUp2');
+      })
+    });
+  }
+});
+
+

@@ -1,0 +1,27 @@
+.profilePage {
+    display: none;
+    grid-template-columns: 250px auto 250px;
+    position: absolute;
+    top: 20vh;
+    width: 80vw;
+    background: powderblue;
+    margin: 0px 8vw 0px 8vw;
+    padding: 50px;
+}
+
+.profilePic {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 250px;
+}
+
+.profileContent {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 0px 50px 0px 50px;
+}
+
+.profileResearch {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}

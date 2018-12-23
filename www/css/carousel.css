@@ -3,11 +3,9 @@
 }
 
 #container-carousel-home {
-  position: relative;
+  position: absolute;
   width: 100vw;
-  margin: auto;
-  margin-top: 100vh;
-  top: 0;
+  top: 16vh;
   text-align: center;
   vertical-align: middle;
   z-index: -2;
