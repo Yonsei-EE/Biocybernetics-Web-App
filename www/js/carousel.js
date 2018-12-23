@@ -37,6 +37,5 @@ $(document).ready(function () {
     });
 
     if($(window).width()>480)
-      $('#container-carousel-home').css('margin-top','calc(34vh - ' + $('.labPoster').outerHeight()/2 + 'px)');
-
+      $('#container-carousel-home').css('margin-top','calc(34vh - ' + $('.labPoster').outerHeight(true)/2 + 'px)');
 });

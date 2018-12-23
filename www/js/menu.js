@@ -189,7 +189,8 @@ $('#professor').on('click', function() {
   if($('#professor').next().hasClass('blob')){
     $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
       $(this).off();
-      $('#professorPage').css('display','grid').addClass('animated slideInUp2').one(animationEnd, function() {
+      $('#professorPage').css('display','grid');
+      $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
         $(this).removeClass('animated slideInUp2');
       })
     });
