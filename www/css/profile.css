@@ -1,27 +1,76 @@
-.profilePage {
-    display: none;
-    grid-template-columns: 250px auto 250px;
-    position: absolute;
-    top: 16vh;
-    width: 80vw;
-    background: powderblue;
-    margin: 0px 8vw 0px 8vw;
-    padding: 50px;
-}
+@media only screen and (min-width: 480px) {
+    .profilePage {
+        display: none;
+        grid-template-columns: 250px auto 250px;
+        grid-template-rows: auto 50px;
+        grid-row-gap: 10px;
+        position: absolute;
+        top: 16vh;
+        width: 80vw;
+        background: powderblue;
+        margin: 0px 5vw 0px 5vw;
+        padding: 5vw;
+    }
 
-.profilePic {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 250px;
-}
+    .profilePic {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 250px;
+    }
 
-.profileContent {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    padding: 0px 50px 0px 50px;
-}
+    .profileContent {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        padding: 0px 50px 0px 50px;
+    }
 
-.profileResearch {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    .profileResearch {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+
+    #thumbnails {
+        grid-column: span 3
+    }
+
+    .first_thumbnail {
+        height: 50px;
+    }
+
+    .thumbnail {
+        height: 50px;
+        margin-left: 10px;
+    }
+
+    .first_thumbnail:hover, .thumbnail:hover {
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .profilePage {
+        display: none;
+        grid-template-columns: 250px;
+        grid-template-rows: auto auto auto;
+        position: absolute;
+        top: 15vh;
+        width: 80vw;
+        background: powderblue;
+        padding: 50px;
+    }
+
+    .profilePic {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 250px;
+    }
+
+    .profileContent {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .profileResearch {
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
 }

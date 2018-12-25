@@ -3,6 +3,7 @@ var animationName;
 var animationEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd MSAnimationEnd';
 var transitionEnd = 'transitionend oTransitionEnd mozTransitionEnd webkitTransitionEnd MSTransitionEnd';
 var i;
+var page = 'home';
 
 function submenuClose() {
   animationName = 'animated fadeOut';
@@ -174,27 +175,493 @@ $('.selectable').on('click', function() {
 })
 
 $('#1').on('click', function() {
-  if($('#1').next().hasClass('blob')){
-    $('.profilePage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
-      $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
-      $(this).off();
-      $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
-        $(this).removeClass('animated slideInRight');
-      });
-    })
+  if(page!='home'){
+    if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#professorPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#phdPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#msPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#internPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#alumniPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#publicationsPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    page = 'home';
   }
 });
 
 $('#professor').on('click', function() {
-  if($('#professor').next().hasClass('blob')){
-    $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
-      $(this).off();
-      $('#professorPage').css('display','grid');
-      $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
-        $(this).removeClass('animated slideInUp2');
+  if(page!='professor'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
       })
-    });
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top','calc(34vh - ' + $('#professorPage').outerHeight()/2 + 'px)').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'professor';
   }
 });
 
+$('#phd').on('click', function() {
+  if(page!='phd'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top','calc(34vh - ' + $('#phdPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'phd';
+  }
+});
 
+$('#ms').on('click', function() {
+  if(page!='ms'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top','calc(34vh - ' + $('#msPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'ms';
+  }
+});
+
+$('#intern').on('click', function() {
+  if(page!='intern'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top','calc(34vh - ' + $('#internPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'intern';
+  }
+});
+
+$('#alumni').on('click', function() {
+  if(page!='alumni'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top','calc(34vh - ' + $('#alumniPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'alumni';
+  }
+});
+
+$('#journel_conference').on('click', function() {
+  if(page!='publications'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').css('margin-top','calc(34vh - ' + $('#publicationsPage').outerHeight()/2 + 'px)').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'publications';
+  }
+});

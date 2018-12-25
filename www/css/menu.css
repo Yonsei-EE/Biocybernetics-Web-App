@@ -94,6 +94,63 @@
   animation-duration: .3s;
 }
 
+.left-arrow {
+  width: 1em;
+  height: 1em;
+}
+
+#publicationsPage {
+  display: none;
+  position: absolute;
+  top: 16vh;
+  width: 80vw;
+  height: 40vh;
+  background: powderblue;
+  margin: 0px 5vw 0px 5vw;
+  padding: 5vw;
+}
+
+#publicationsContent {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.Publication_Begin {
+  text-align: left;
+  line-height: 110%;
+  margin-top: 20pt;
+  margin-bottom: 0pt;
+  margin-left: 0in;
+  DIRECTION: ltr;
+  unicode-bidi: embed;
+}
+
+.Publication_Title {
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.infoscience_record.infoscience_record_bulleted {
+  border-bottom: 1px dotted #000;
+  margin-top: 8px;
+  padding-bottom: 7px;
+}
+
+span.infoscience_bullet {
+  float: left;
+  text-align: right;
+  width: 3em;
+}
+
+.infoscience_data {
+  margin-left: 4em;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 @media only screen and (max-width: 480px) {
   .container-menu {
     width: 100vw;

@@ -46,9 +46,8 @@ li {
 
 #background {
   position: absolute;
-  font-size: 12vh;
+  font-size: 6vw;
   width: 100%;
-  margin: 40vh auto;
   z-index: -2;
   text-align: center;
 }
