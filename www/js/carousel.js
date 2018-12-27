@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#carousel-home').slick({
         autoplay: true,
-        autoplaySpeed: 8000,
-        pauseOnHover: false,
+        autoplaySpeed: 6000,
+        pauseOnHover: true,
         arrows: false,
         dots: true,
         slidesToShow: 3,
