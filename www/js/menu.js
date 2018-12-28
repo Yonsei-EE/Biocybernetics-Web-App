@@ -247,6 +247,26 @@ if($(window).width()>480) {
         });
       })
     }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#labPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $('#researchPage').css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#container-carousel-home').css({'-webkit-animation-delay':'0s'}).removeClass('animated slideOutRight').addClass('animated slideInRight').one(animationEnd, function() {
+          $(this).removeClass('animated slideInRight');
+          $(this).off();
+        });
+      })
+    }
     page = 'home';
   }
 }
@@ -321,6 +341,29 @@ $('#professor').on('click', function() {
         })
       })
     }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top',getMargin('#professorPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#professorPage').css('display','grid');
+        $('#professorPage').css('margin-top',getMargin('#professorPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    
     page = 'professor';
   }
 });
@@ -384,12 +427,34 @@ $('#phd').on('click', function() {
       })
     }
     else if(page=='publications') {
-      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top',getMargin('#phdPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#phdPage').css('display','grid');
         $('#phdPage').css('margin-top',getMargin('#phdPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#phdPage').css('display','grid');
+        $('#phdPage').css('margin-top',getMargin('#phdPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
           $(this).off();
         })
       })
@@ -459,12 +524,34 @@ $('#ms').on('click', function() {
       })
     }
     else if(page=='publications') {
-      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top',getMargin('#msPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#msPage').css('display','grid');
         $('#msPage').css('margin-top',getMargin('#msPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#msPage').css('display','grid');
+        $('#msPage').css('margin-top',getMargin('#msPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
           $(this).off();
         })
       })
@@ -532,12 +619,34 @@ $('#intern').on('click', function() {
       })
     }
     else if(page=='publications') {
-      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top',getMargin('#internPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#internPage').css('display','grid');
         $('#internPage').css('margin-top',getMargin('#internPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#internPage').css('display','grid');
+        $('#internPage').css('margin-top',getMargin('#internPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
           $(this).off();
         })
       })
@@ -554,7 +663,7 @@ $('#alumni').on('click', function() {
       $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
@@ -565,7 +674,7 @@ $('#alumni').on('click', function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
@@ -576,7 +685,7 @@ $('#alumni').on('click', function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
@@ -587,7 +696,7 @@ $('#alumni').on('click', function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
@@ -598,19 +707,41 @@ $('#alumni').on('click', function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
       })
     }
     else if(page=='publications') {
-      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
         $(this).off();
         $('#alumniPage').css('display','grid');
-        $('#alumniPage').css('margin-top',getMargin('#alumni')).addClass('animated slideInUp2').one(animationEnd, function() {
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInUp2').one(animationEnd, function() {
           $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#alumniPage').css('display','grid');
+        $('#alumniPage').css('margin-top',getMargin('#alumniPage')).addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
           $(this).off();
         })
       })
@@ -688,6 +819,420 @@ $('#journel_conference').on('click', function() {
         })
       })
     }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#publicationsPage').css('display','grid');
+        $('#publicationsPage').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
     page = 'publications';
+  }
+});
+
+$('#laboratory').on('click', function() {
+  if(page!='lab'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        if($(window).width()<480)
+          $('#container-carousel-home').css('display', 'none');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='bioRobotics' || page=='cognitiveScience' || page=="machineLearning") {
+      $('#researchPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#labPage').css('display','grid');
+        $('#labPage').addClass('animated slideInDown2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInDown2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'lab';
+  }
+});
+
+$('#bioRobotics').on('click', function() {
+  if(page!='research'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        if($(window).width()<480)
+          $('#container-carousel-home').css('display', 'none');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'bioRobotics';
+  }
+
+  else if(page!='bioRobotics') {
+    //change title and content to biorobotics
+  }
+});
+
+$('#cognitiveScience').on('click', function() {
+  if(page!='research'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        if($(window).width()<480)
+          $('#container-carousel-home').css('display', 'none');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'cognitiveScience';
+  }
+
+  else if(page!='cognitiveScience') {
+    //change title and content to cognitiveScience
+  }
+});
+
+$('#machineLearning').on('click', function() {
+  if(page!='research'){
+    if(page=='home') {
+      $('#container-carousel-home').css({'-webkit-animation-delay':'1s'}).addClass('animated slideOutRight').one(animationEnd, function() {
+        if($(window).width()<480)
+          $('#container-carousel-home').css('display', 'none');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      });
+    }
+    else if(page=='professor') {
+      $('#professorPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='phd') {
+      $('#phdPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='ms') {
+      $('#msPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='intern') {
+      $('#internPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='alumni') {
+      $('#alumniPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='publications') {
+      $('#publicationsPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutDown2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    else if(page=='lab') {
+      $('#labPage').css('-webkit-animation-delay', '1s').addClass('animated slideOutUp2').one(animationEnd, function() {
+        $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutUp2');
+        $(this).off();
+        $('#researchPage').css('display','grid');
+        $('#researchPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
+          $(this).off();
+        })
+      })
+    }
+    page = 'machineLearning';
+  }
+
+  else if(page!='machineLearning') {
+    //change title and content to machineLearning
   }
 });

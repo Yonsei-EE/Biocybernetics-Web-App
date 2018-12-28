@@ -99,7 +99,7 @@
   height: 1em;
 }
 
-#publicationsPage {
+.documentPage {
   display: none;
   position: absolute;
   top: 16vh;
@@ -108,25 +108,25 @@
   background: powderblue;
 }
 
-#publicationsContent {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.Publication_Begin {
+.begin {
   text-align: left;
   line-height: 110%;
-  margin: 20pt 1in 0pt 20pt;
+  margin: 20pt;
   DIRECTION: ltr;
   unicode-bidi: embed;
 }
 
-.Publication_Title {
+.title {
   color: black;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14pt;
   font-weight: bold;
   font-style: italic;
+}
+
+.content {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .year {
@@ -150,6 +150,16 @@ span.infoscience_bullet {
   margin-left: 4em;
   font-size: 15px;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+#researchTitle {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+}
+
+.researchContent {
+  margin: 0 5vh 0 5vh;
 }
 
 @media only screen and (max-width: 480px) {
@@ -194,7 +204,7 @@ span.infoscience_bullet {
     }
   }
 
-  .Publication_Begin {
+  .begin {
     margin: 20pt auto 0pt auto;
   }
 }
