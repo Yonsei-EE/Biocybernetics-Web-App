@@ -77,19 +77,23 @@ li {
 }
 
 @media only screen and (max-width: 480px) {
+  html, body {
+    overflow: scroll;
+  }
+
   .fa-2x {
     font-size: 1.5em;
   }
   li {
     margin: 1em 0 1em 0em;
   }
-  #main {
+  /* #main {
     transition: transform .8s cubic-bezier(1, .01, .54, 1);
   }
   #main.clicked {
     width: 100%;
     transform: translate(100%);
-  }
+  } */
   #banner {
     height: 15vh;
   }

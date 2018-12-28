@@ -29,7 +29,7 @@
         grid-column-end: 4;
     }
 
-    #thumbnails {
+    .thumbnails {
         grid-column: span 3
     }
 
@@ -49,28 +49,44 @@
 @media only screen and (max-width: 480px) {
     .profilePage {
         display: none;
-        grid-template-columns: 250px;
+        grid-template-columns: 80vw;
         grid-template-rows: auto auto auto;
         position: absolute;
-        top: 15vh;
+        top: 16vh;
         width: 80vw;
         background: powderblue;
-        padding: 50px;
+        padding: 10vw;
     }
 
+    
     .profilePic {
         grid-row-start: 1;
         grid-row-end: 2;
         width: 250px;
+        justify-self: center;
+    }
+
+    .thumbnails {
+        grid-row: 2/3;
+        grid-column: span 3;
+        justify-self: center;
+        margin-top: 10px;
+    }
+
+    .first_thumbnail {
+        height: 50px;
+    }
+
+    .thumbnail {
+        height: 50px;
+        margin-left: 10px;
     }
 
     .profileContent {
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-row: 3/4;
     }
 
     .profileResearch {
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-row: 4/5;
     }
 }
