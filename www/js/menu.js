@@ -835,8 +835,8 @@ $('#journel_conference').on('click', function() {
         $(this).css({'display':'none','-webkit-animation-delay':'0s'}).removeClass('animated slideOutDown2');
         $(this).off();
         $('#publicationsPage').css('display','grid');
-        $('#publicationsPage').addClass('animated slideInDown2').one(animationEnd, function() {
-          $(this).removeClass('animated slideInDown2');
+        $('#publicationsPage').addClass('animated slideInUp2').one(animationEnd, function() {
+          $(this).removeClass('animated slideInUp2');
           $(this).off();
         })
       })
