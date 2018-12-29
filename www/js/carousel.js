@@ -30,13 +30,13 @@ var animationEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEn
 var animationName = 'animated slideInRight2';
 
 $('#container-carousel-home').css('margin-top','calc(34vh - ' + $('.labPoster').outerHeight(true)/2 + 'px)');
-$('#background').css('margin','calc(50vh - ' + $('#background').height()/2 + 'px) auto');
 $('#controlLeftArrow').on('click', function() {$('#carousel-home').slick('slickPrev');});
 $('#controlRightArrow').on('click', function() {$('#carousel-home').slick('slickNext');});
+$('.slick-dots').offset({top: $(window).height() * 0.95 - $('.slick-dots').height()});
 
 if($(window).width()>480) {
-  $('#carousel-control').css('grid-template-columns', $('.slick-dots').height() + 'px ' + $('.slick-dots').height() + 'px');
-  $('.controlArrow').css({'width':$('.slick-dots').height(), 'transform':'translateY(-' + $('.slick-dots').height() + 'px)'});
+  $('#carousel-control').css({'grid-template-columns' : $('.slick-dots').height() + 'px ' + $('.slick-dots').height() + 'px','height' : $('.slick-dots').height()});
+  $('#carousel-control').offset({top: $('.slick-dots').offset().top});
 
   // carousel step in
   for(i=2;i>-3;i--) {
@@ -51,15 +51,16 @@ if($(window).width()>480) {
 
 $(window).on('resize', _.debounce(function(){
   $('#container-carousel-home').css('margin-top','calc(34vh - ' + $('.labPoster').outerHeight(true)/2 + 'px)');
-  $('#background').css('margin','calc(50vh - ' + $('#background').height()/2 + 'px) auto');
+  $('.slick-dots').offset({top: $(window).height() * 0.95 - $('.slick-dots').height()});
+
   if($(window).width()<480) {
-    $('#carousel-control').css('grid-template-columns', '24px 24px');
-    $('.controlArrow').css({'width': '24px', 'transform':'translateY(0px)'});
+    $('#carousel-control').css({'grid-template-columns' : '23px 23px', 'top' : '0px'});
+    $('.controlArrow').css('width','23px');
     $('#container-carousel-home').css('margin-left','calc(50vw - ' + $('.labPoster').width()/2 + 'px)');
   }
   else {
     $('#carousel-control').css('grid-template-columns', $('.slick-dots').height() + 'px ' + $('.slick-dots').height() + 'px');
-    $('.controlArrow').css({'width':$('.slick-dots').height(), 'transform':'translateY(-' + $('.slick-dots').height() + 'px)'});
+    $('#carousel-control').offset({top: $('.slick-dots').offset().top});
     $('#container-carousel-home').css('margin-left','auto');
   }
   if($('#container-toggle').width()!=$('.container-menu-ultimate').width()) {

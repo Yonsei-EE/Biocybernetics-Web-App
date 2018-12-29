@@ -35,8 +35,6 @@
 
 .slick-dots {
   position: relative;
-  bottom: auto;
-  margin-top: 1em;
 }
 
 .item { 
@@ -60,13 +58,12 @@
 
 #carousel-control {
   display: grid;
-  grid-template-columns: 24px 24px;
+  grid-template-columns: 23px 23px;
   justify-content: space-between;
   margin: 0 5vh 0 5vh;
 }
 
 .controlArrow:hover {
-  width: 24px;
   cursor: pointer; 
 }
 
