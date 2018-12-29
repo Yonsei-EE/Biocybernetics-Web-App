@@ -1236,3 +1236,18 @@ $('#machineLearning').on('click', function() {
     //change title and content to machineLearning
   }
 });
+
+$(window).on('resize', _.debounce(function(){
+  if($(window).width()>480) {
+  }
+  else {
+  }
+
+  $('.profilePage').each(function() {
+    $(this).css('margin-top', getMargin(this));
+  });
+    
+  if($('#container-toggle').width()!=$('.container-menu-ultimate').width()) {
+    $('#container-toggle').css('width', $('.container-menu-ultimate').width() + 'px');
+  }
+}, 100));

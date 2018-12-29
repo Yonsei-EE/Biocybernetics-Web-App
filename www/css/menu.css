@@ -41,8 +41,9 @@
 }
 
 .container-menu-ultimate {
+  position: fixed;
   display: flex;
-  width: 100%;
+  width: 100vw;
 }
 
 #container-toggle {
@@ -105,13 +106,14 @@
   top: 16vh;
   width: 100vw;
   height: 84vh;
-  background: powderblue;
+  background-image: linear-gradient(90deg, white 0%, #ebedee 100%);
+  box-shadow: 0px 0px 70px -20px black;
 }
 
 .begin {
   text-align: left;
   line-height: 110%;
-  margin: 20pt;
+  margin: 20pt 0 10pt 0;
   DIRECTION: ltr;
   unicode-bidi: embed;
 }
@@ -122,6 +124,7 @@
   font-size: 14pt;
   font-weight: bold;
   font-style: italic;
+  text-align: center;
 }
 
 .content {
@@ -154,8 +157,13 @@ span.infoscience_bullet {
 
 #researchTitle {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 40vw 20vw 40vw;
   justify-items: center;
+  text-align: center;
+}
+
+#researchTitle > span {
+  padding: 0 20pt 0 20pt;
 }
 
 .researchContent {
@@ -204,7 +212,7 @@ span.infoscience_bullet {
     }
   }
 
-  .begin {
-    margin: 20pt auto 0pt auto;
+  .documentPage {
+    position: relative;
   }
 }

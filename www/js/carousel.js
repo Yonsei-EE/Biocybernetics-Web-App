@@ -91,10 +91,6 @@ $(window).on('resize', _.debounce(function(){
     $('.controlArrow').css('width','23px');
     $('#container-carousel-home').css('margin-left','calc(50vw - ' + $('.labPoster').width()/2 + 'px)');
   }
-
-  if($('#container-toggle').width()!=$('.container-menu-ultimate').width()) {
-    $('#container-toggle').css('width', $('.container-menu-ultimate').width() + 'px');
-  }
 }, 100));
 });
 

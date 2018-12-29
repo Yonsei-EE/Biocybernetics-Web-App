@@ -7,9 +7,14 @@
         position: absolute;
         top: 16vh;
         width: 80vw;
-        background: powderblue;
+        background-image: linear-gradient(90deg, white 0%, #ebedee 100%);
+        box-shadow: 0px 0px 70px -20px black;
         margin: 0px 5vw 0px 5vw;
         padding: 5vw;
+    }
+
+    #professorPage, #labPage {
+        grid-template-rows: auto;
     }
 
     .profilePic {
@@ -51,14 +56,18 @@
         display: none;
         grid-template-columns: 80vw;
         grid-template-rows: auto auto auto;
-        position: absolute;
+        position: relative;
         top: 16vh;
         width: 80vw;
-        background: powderblue;
+        background-image: linear-gradient(90deg, white 0%, #ebedee 100%);
+        box-shadow: 0px 0px 70px -20px black;
         padding: 10vw;
     }
 
-    
+    #professorPage, #labPage {
+        grid-template-rows: auto;
+    }
+
     .profilePic {
         grid-row-start: 1;
         grid-row-end: 2;
@@ -80,6 +89,10 @@
     .thumbnail {
         height: 50px;
         margin-left: 10px;
+    }
+
+    .first_thumbnail:hover, .thumbnail:hover {
+        cursor: pointer;
     }
 
     .profileContent {
