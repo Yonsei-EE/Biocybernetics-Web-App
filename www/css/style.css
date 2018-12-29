@@ -106,9 +106,8 @@ li {
     display: initial;
     margin-left: calc(50vw - 19vh);
   }
-  .loremIpsum {
-    width: 80%;
-    margin: 0;
-    padding: 10%;
+  #background {
+    width: 50vw;
+    margin: 0 25vw 0 25vw;
   }
 }
